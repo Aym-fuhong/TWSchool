@@ -3,14 +3,14 @@
 module.exports = function collectSameElements(collectionA, objectB) {
   let result =[];
   for(let j =0; j< collectionA.length; j++){
-    if(compare(collectionA[j], objectB.value)){
+    if(isExist(collectionA[j], objectB.value)){
       result.push(collectionA[j]);
     }
   }
   return result;
 };
 
-function compare(element, collection) {
+function isExist(element, collection) {
   for(let i = 0; i< collection.length;i++){
     if(element === collection[i]) {
         return true;
