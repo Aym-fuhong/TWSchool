@@ -13,9 +13,9 @@ function splitCollection(collection) {
   for (let i = 0; i < collection.length; i++) {
     if (collection[i].includes('-')) {
       let array = collection[i].split('-');
-      splitedCollection.push({'barcode': array[0], 'count': parseFloat(array[1])});
+      splitedCollection.push({barcode: array[0], count: parseFloat(array[1])});
     } else {
-      splitedCollection.push({'barcode': collection[i], 'count': 1});
+      splitedCollection.push({barcode: collection[i], count: 1});
     }
   }
   return splitedCollection;
@@ -23,12 +23,12 @@ function splitCollection(collection) {
 
 function getItemCount(splitedCollection) {
   let formattedCollection = [];
-  for (let i=0; i< splitedCollection.length; i++ ) {
+  for (let i = 0; i < splitedCollection.length; i++) {
     if (findOne(splitedCollection[i].barcode, formattedCollection)) {
       let item = findOne(splitedCollection[i].barcode, formattedCollection);
-      item.count +=  splitedCollection[i].count;
+      item.count += splitedCollection[i].count;
     } else {
-      formattedCollection.push({'barcode': splitedCollection[i].barcode, 'count': splitedCollection[i].count});
+      formattedCollection.push({barcode: splitedCollection[i].barcode, count: splitedCollection[i].count});
     }
   }
   return formattedCollection;
@@ -47,6 +47,30 @@ function getItemsInfo(formattedCollection) {
   return formattedCollection;
 
 };
+
+function isExist(element, collection){
+  let isExist = false;
+  for(let i=0; i < collection.length; i++){
+    if(element === collection[i]){
+      isExist = true;
+    }
+  }
+  return isExist;
+}
+
+function addTypeOfPromotionItem(collection) {
+  let promotions = loadPromotions();
+  for(let i = 0; i < collection.length;i++){
+    for(let j=0; j < promotions.length;j++){
+      if(isExist(collection[i].barcode ,promotions[j].barcodes)){
+         collection[i].type = promotions[j].type
+      }
+    }
+  }
+  return collection;
+}
+
+
 
 function printReceipt(collection) {
 
