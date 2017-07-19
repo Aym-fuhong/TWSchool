@@ -142,6 +142,51 @@ describe('pos', () => {
     expect(getItemPrice(collectionInfo)).toEqual(collectionInfo);
 
   });
+
+  it('should return object includes totalPrice and savedPrice ', () => {
+    const itemPriceCollection = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶',
+        type: 'BUY_TWO_GET_ONE_FREE',
+        itemPrice: 12.00
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 4,
+        itemPrice: 8.00
+      }];
+    const result = {
+      items: [
+        {
+          barcode: 'ITEM000001',
+          count: 5,
+          name: '雪碧',
+          price: 3.00,
+          unit: '瓶',
+          type: 'BUY_TWO_GET_ONE_FREE',
+          itemPrice: 12.00
+        },
+        {
+          barcode: 'ITEM000004',
+          name: '电池',
+          unit: '个',
+          price: 2.00,
+          count: 4,
+          itemPrice: 8.00
+        }],
+      totalPrice: 20.00,
+      savedPrice: 3.00
+    };
+    expect(getTotalPrice(itemPriceCollection)).toEqual(result);
+  });
+
   it('should print text', () => {
 
     const tags = [

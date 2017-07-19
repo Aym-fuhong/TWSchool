@@ -83,7 +83,17 @@ function getItemPrice(collection) {
 }
 
 function getTotalPrice(collection) {
-  
+  let result = {};
+  let totalPrice = 0;
+  let sumPrice = 0;
+  for (let i = 0; i < collection.length; i++) {
+    totalPrice += collection[i].itemPrice;
+    sumPrice += collection[i].price * collection[i].count;
+  }
+  result.items = collection;
+  result.totalPrice = totalPrice;
+  result.savedPrice = sumPrice - totalPrice;
+  return result;
 }
 
 function printReceipt(collection) {
