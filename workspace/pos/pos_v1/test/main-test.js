@@ -2,6 +2,65 @@
 
 describe('pos', () => {
 
+  it('should renturn one object', () => {
+    const element = 8;
+    const collection = [{barcode:1}, {barcode: 8}];
+    expect(findOne(element,collection)).toEqual({barcode: 8});
+  });
+
+  it('should return splitedCollection', () => {
+    const tags = [
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000003-2.5',
+      'ITEM000005',
+      'ITEM000005-2',
+    ];
+    const splitedCollection = [
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000003', 'count': 2.5},
+      {'barcode': 'ITEM000005', 'count': 1},
+      {'barcode': 'ITEM000005', 'count': 2}];
+    expect(splitCollection(tags)).toEqual(splitedCollection);
+
+  });
+
+  it('should return formattedCollection', () => {
+    const splitedCollection = [
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000001', 'count': 1},
+      {'barcode': 'ITEM000003', 'count': 2.5},
+      {'barcode': 'ITEM000005', 'count': 1},
+      {'barcode': 'ITEM000005', 'count': 2}];
+    const formattedCollection = [
+      {'barcode': 'ITEM000001', 'count': 5},
+      {'barcode': 'ITEM000003', 'count': 2.5},
+      {'barcode': 'ITEM000005', 'count': 3},
+    ];
+    expect(getItemCount(splitedCollection)).toEqual(formattedCollection);
+
+  });
+
+  it('should return formattedCollection', () => {
+    const formattedCollection = [
+      {'barcode': 'ITEM000001', 'count': 5},
+    ];
+    const collectionInfo = [{'barcode': 'ITEM000001', 'count': 5, name: '雪碧', price: 3.00, unit: '瓶'}];
+    expect(getItemsInfo(formattedCollection)).toEqual(collectionInfo);
+
+  });
+
+
   it('should print text', () => {
 
     const tags = [
