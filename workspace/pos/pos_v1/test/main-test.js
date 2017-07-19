@@ -4,8 +4,8 @@ describe('pos', () => {
 
   it('should renturn one object', () => {
     const element = 8;
-    const collection = [{barcode:1}, {barcode: 8}];
-    expect(findOne(element,collection)).toEqual({barcode: 8});
+    const collection = [{barcode: 1}, {barcode: 8}];
+    expect(findOne(element, collection)).toEqual({barcode: 8});
   });
 
   it('should return splitedCollection', () => {
@@ -55,22 +55,93 @@ describe('pos', () => {
     const formattedCollection = [
       {barcode: 'ITEM000001', count: 5},
     ];
-    const collectionInfo = [{barcode: 'ITEM000001', count: 5, name: '雪碧', price: 3.00, unit: '瓶'}];
+    const collectionInfo = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶'
+      }];
     expect(getItemsInfo(formattedCollection)).toEqual(collectionInfo);
 
   });
 
 
   it('should return addTypeOfPromotionItem', () => {
-    const formattedCollection = [{barcode: 'ITEM000001', count: 5, name: '雪碧', price: 3.00, unit: '瓶'},
-      {barcode: 'ITEM000004', name: '电池', unit: '个', price: 2.00, count: 1}];
-    const collectionInfo = [{barcode: 'ITEM000001', count: 5, name: '雪碧', price: 3.00, unit: '瓶',
-      'type': 'BUY_TWO_GET_ONE_FREE'},{barcode: 'ITEM000004', name: '电池', unit: '个', price: 2.00, count: 1}];
+    const formattedCollection = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶'
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 1
+      }];
+    const collectionInfo = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶',
+        'type': 'BUY_TWO_GET_ONE_FREE'
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 1
+      }];
     expect(addTypeOfPromotionItem(formattedCollection)).toEqual(collectionInfo);
 
   });
 
+  it('should return itemPriceOfCollection', () => {
+    const collectionInfo = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶',
+        'type': 'BUY_TWO_GET_ONE_FREE'
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 1
+      }];
+    const itemPriceCollection = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶',
+        type: 'BUY_TWO_GET_ONE_FREE',
+        itemPrice: 12.00
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 4,
+        itemPrice: 8.00
+      }];
+    expect(getItemPrice(collectionInfo)).toEqual(collectionInfo);
 
+  });
   it('should print text', () => {
 
     const tags = [

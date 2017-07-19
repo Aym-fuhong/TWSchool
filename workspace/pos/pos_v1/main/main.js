@@ -48,10 +48,10 @@ function getItemsInfo(formattedCollection) {
 
 };
 
-function isExist(element, collection){
+function isExist(element, collection) {
   let isExist = false;
-  for(let i=0; i < collection.length; i++){
-    if(element === collection[i]){
+  for (let i = 0; i < collection.length; i++) {
+    if (element === collection[i]) {
       isExist = true;
     }
   }
@@ -60,10 +60,10 @@ function isExist(element, collection){
 
 function addTypeOfPromotionItem(collection) {
   let promotions = loadPromotions();
-  for(let i = 0; i < collection.length;i++){
-    for(let j=0; j < promotions.length;j++){
-      if(isExist(collection[i].barcode ,promotions[j].barcodes)){
-         collection[i].type = promotions[j].type
+  for (let i = 0; i < collection.length; i++) {
+    for (let j = 0; j < promotions.length; j++) {
+      if (isExist(collection[i].barcode, promotions[j].barcodes)) {
+        collection[i].type = promotions[j].type
       }
     }
   }
@@ -71,6 +71,20 @@ function addTypeOfPromotionItem(collection) {
 }
 
 
+function getItemPrice(collection) {
+  for (let i = 0; i < collection.length; i++) {
+    let itemPrice = collection[i].price * collection[i].count;
+    if (collection[i].type === 'BUY_TWO_GET_ONE_FREE') {
+      itemPrice = collection[i].count >= 3 ? itemPrice - collection[i].price : itemPrice
+    }
+    collection[i].itemPrice = itemPrice;
+  }
+  return collection;
+}
+
+function getTotalPrice(collection) {
+  
+}
 
 function printReceipt(collection) {
 
