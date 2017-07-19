@@ -107,9 +107,8 @@ function getReceiptString(object) {
   return line ;
 }
 function printReceipt(collection) {
-  let splitCollection = splitCollection(collection);
-  console.log(splitCollection,'splitcollection------');
-  let formattedCollection = getItemCount(splitCollection);
+  let splitedCollection1 = splitCollection(collection);
+  let formattedCollection = getItemCount(splitedCollection1);
   let itemsInfo = getItemsInfo(formattedCollection);
   let itemTypeOfPromotionitems = addTypeOfPromotionItem(itemsInfo);
   let itemPriceOfitems = getItemPrice(itemTypeOfPromotionitems);
