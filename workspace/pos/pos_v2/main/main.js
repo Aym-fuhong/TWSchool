@@ -7,7 +7,7 @@ function printReceipt(collection) {
   let formattedTags = formatTags(collection);
   let cartItems = getCartItems(formattedTags, AllItems);
   let receiptObj = calculatePrice(cartItems);
-  let result = getReceiptStr(receiptObj, currentDate);
+  let result = getReceiptStr(receiptObj);
   return result;
 }
 

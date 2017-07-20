@@ -237,8 +237,9 @@ describe('pos', () => {
 **********************`;
     expect(getReceiptStr(collection)).toEqual(result);
   });
-  it('should print text', () => {
 
+
+  it('should print text', () => {
     const tags = [
       'ITEM000001',
       'ITEM000001',
@@ -276,6 +277,6 @@ describe('pos', () => {
 节省：7.50(元)
 **********************`;
 
-    expect(console.log).toHaveBeenCalledWith(expectText);
+    expect(printReceipt(tags)).toEqual(expectText);
   });
 });
