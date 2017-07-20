@@ -53,7 +53,7 @@ describe('pos', () => {
 
   it('should return formattedCollection', () => {
     const formattedCollection = [
-      {barcode: 'ITEM000001', count: 5},
+      {barcode: 'ITEM000001', count: 5}
     ];
     const collectionInfo = [
       {
@@ -184,7 +184,7 @@ describe('pos', () => {
       totalPrice: 20.00,
       savedPrice: 3.00
     };
-    expect(getTotalPrice(itemPriceCollection)).toEqual(result);
+    expect(getTotalAndSavedPrice(itemPriceCollection)).toEqual(result);
   });
 
   it('should return receiptString', () => {

@@ -80,7 +80,7 @@ function getItemPrice(collection) {
   return collection;
 }
 
-function getTotalPrice(collection) {
+function getTotalAndSavedPrice(collection) {
   let result = {};
   let totalPrice = 0;
   let sumPrice = 0;
@@ -112,7 +112,7 @@ function printReceipt(collection) {
   let itemsInfo = getItemsInfo(formattedCollection);
   let itemTypeOfPromotionitems = addTypeOfPromotionItem(itemsInfo);
   let itemPriceOfitems = getItemPrice(itemTypeOfPromotionitems);
-  let totalPticeofItems = getTotalPrice(itemPriceOfitems);
+  let totalPticeofItems = getTotalAndSavedPrice(itemPriceOfitems);
   let result = getReceiptString(totalPticeofItems);
   return result;
 }
