@@ -24,25 +24,44 @@ function calculatePrice(cartItems) {
   return receiptObj;
 
 }
+
 function getReceiptStr(receiptobj) {
   let formattedCurrentDate = getCurrentDate();
 }
 
 function splitTags(collection) {
   return collection.map((item) => {
-    if(item.includes('-')){
+    if (item.includes('-')) {
       let element = item.split('-');
       return {barcode: element[0], count: parseFloat(element[1])};
     } else {
       return {barcode: item, count: 1};
-    }});
+    }
+  });
+}
+
+function getItemsCount(splitedTags) {
+  let formattedTags = [];
+  splitedTags.forEach(item => {
+    if (findItem(item.barcode, formattedTags)) {
+      let element = findItem(item.barcode, formattedTags);
+      element.count += item.count;
+    } else {
+      formattedTags.push({barcode: item.barcode, count: item.count});
+    }
+  });
+  return formattedTags;
 }
 
 function getCurrentDate() {
   return '';
 }
+
 function getCartItems(collection, items) {
 
+}
+function findItem(element, collection) {
+  return collection.find(item => element === item.barcode);
 }
 
 

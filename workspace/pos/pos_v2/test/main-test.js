@@ -26,6 +26,25 @@ describe('pos', () => {
 
   });
 
+  it('should return formattedCollection', () => {
+    const splitedTags = [
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000003', count: 2.5},
+      {barcode: 'ITEM000005', count: 1},
+      {barcode: 'ITEM000005', count: 2}];
+    const formattedTags = [
+      {barcode: 'ITEM000001', count: 5},
+      {barcode: 'ITEM000003', count: 2.5},
+      {barcode: 'ITEM000005', count: 3},
+    ];
+    expect(getItemsCount(splitedTags)).toEqual(formattedTags);
+
+  });
+
   it('should print text', () => {
 
     const tags = [
