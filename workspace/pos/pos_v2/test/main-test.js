@@ -2,6 +2,30 @@
 
 describe('pos', () => {
 
+  it('should return splitedTags', () => {
+    const tags = [
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000001',
+      'ITEM000003-2.5',
+      'ITEM000005',
+      'ITEM000005-2',
+    ];
+    const splitedTags = [
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000001', count: 1},
+      {barcode: 'ITEM000003', count: 2.5},
+      {barcode: 'ITEM000005', count: 1},
+      {barcode: 'ITEM000005', count: 2}];
+    expect(splitTags(tags)).toEqual(splitedTags);
+
+  });
+
   it('should print text', () => {
 
     const tags = [
