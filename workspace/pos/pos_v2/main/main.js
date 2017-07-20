@@ -17,6 +17,18 @@ function formatTags(collection) {
   return formattedTags;
 }
 
+function getCartItems(formattedTags, items) {
+  return formattedTags.map(item => {
+    if (findItem(item.barcode, items)) {
+      let element = findItem(item.barcode, items);
+      item.name = element.name;
+      item.unit = element.unit;
+      item.price = element.price;
+    }
+    return item;
+  });
+}
+
 function calculatePrice(cartItems) {
   let itemsPromotionType = getItemsPromotionType(cartItems, Promotions);
   let itemsPrice = getItemsPrice(itemsPromotionType);
@@ -53,19 +65,6 @@ function getItemsCount(splitedTags) {
   return formattedTags;
 }
 
-
-function getCartItems(formattedTags, items) {
-  return formattedTags.map(item => {
-    if (findItem(item.barcode, items)) {
-      let element = findItem(item.barcode, items);
-      item.name = element.name;
-      item.unit = element.unit;
-      item.price = element.price;
-    }
-    return item;
-  });
-}
-
 function getItemsPromotionType(cartItems, promotion) {
   return cartItems.map(item => {
       promotion.forEach(element => {
@@ -76,6 +75,20 @@ function getItemsPromotionType(cartItems, promotion) {
       return item;
     }
   );
+}
+
+function getItemsPrice(itemsPromotionType) {
+  return itemsPromotionType.map(item => {
+    if (item.type) {
+      if(item.count >= 3){
+        item.itemPrice = parseFloat(item.price * (item.count - 1));
+      }
+    } else {
+      item.itemPrice = parseFloat(item.price * item.count);
+    }
+    return item;
+  });
+
 }
 
 function getCurrentDate() {
