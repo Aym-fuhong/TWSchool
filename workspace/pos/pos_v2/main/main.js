@@ -53,13 +53,24 @@ function getItemsCount(splitedTags) {
   return formattedTags;
 }
 
+
+function getCartItems(formattedTags, items) {
+  return formattedTags.map(item => {
+    if(findItem(item.barcode, items)){
+      let element = findItem(item.barcode, items);
+      console.log(element,'element');
+      item.name = element.name;
+      item.unit = element.unit;
+      item.price = element.price;
+    }
+    return item;
+  });
+}
+
 function getCurrentDate() {
   return '';
 }
 
-function getCartItems(collection, items) {
-
-}
 function findItem(element, collection) {
   return collection.find(item => element === item.barcode);
 }

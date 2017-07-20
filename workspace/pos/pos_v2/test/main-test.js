@@ -45,6 +45,24 @@ describe('pos', () => {
 
   });
 
+
+  it('should return cartItems', () => {
+    const formattedTags = [
+      {barcode: 'ITEM000001', count: 5}
+    ];
+    const cartItems = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶'
+      }];
+    let items= Item.all();
+    expect(getCartItems(formattedTags, items)).toEqual(cartItems);
+
+  });
+
   it('should print text', () => {
 
     const tags = [
