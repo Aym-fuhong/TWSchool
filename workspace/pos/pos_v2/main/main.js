@@ -91,6 +91,20 @@ function getItemsPrice(itemsPromotionType) {
 
 }
 
+function getReceiptObj(itemsPrice){
+  let receiptObj = {};
+  let totalPrice = 0;
+  let savedPrice = 0;
+  itemsPrice.forEach(item => {
+    totalPrice += item.itemPrice;
+    savedPrice += item.count*item.price - item.itemPrice;
+  });
+  receiptObj.items = itemsPrice;
+  receiptObj.totalPrice = parseFloat(totalPrice);
+  receiptObj.savedPrice = parseFloat(savedPrice);
+  return receiptObj;
+}
+
 function getCurrentDate() {
   return '';
 }
