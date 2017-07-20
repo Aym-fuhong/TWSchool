@@ -63,6 +63,43 @@ describe('pos', () => {
 
   });
 
+  it('should return addTypeOfPromotionItem', () => {
+    const cartItems = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶'
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 1
+      }];
+    const itemsPromotionsType = [
+      {
+        barcode: 'ITEM000001',
+        count: 5,
+        name: '雪碧',
+        price: 3.00,
+        unit: '瓶',
+        'type': 'BUY_TWO_GET_ONE_FREE'
+      },
+      {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00,
+        count: 1
+      }];
+    let promotioms = Promotion.all();
+    expect(getItemsPromotionType(cartItems, promotioms)).toEqual(itemsPromotionsType);
+
+  });
+
   it('should print text', () => {
 
     const tags = [

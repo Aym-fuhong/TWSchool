@@ -56,9 +56,8 @@ function getItemsCount(splitedTags) {
 
 function getCartItems(formattedTags, items) {
   return formattedTags.map(item => {
-    if(findItem(item.barcode, items)){
+    if (findItem(item.barcode, items)) {
       let element = findItem(item.barcode, items);
-      console.log(element,'element');
       item.name = element.name;
       item.unit = element.unit;
       item.price = element.price;
@@ -67,10 +66,25 @@ function getCartItems(formattedTags, items) {
   });
 }
 
+function getItemsPromotionType(cartItems, promotion) {
+  return cartItems.map(item => {
+      promotion.forEach(element => {
+        if (isPromotionItem(item.barcode, element.barcodes)) {
+          item.type = element.type;
+        }
+      });
+      return item;
+    }
+  );
+}
+
 function getCurrentDate() {
   return '';
 }
 
+function isPromotionItem(element, collection) {
+  return collection.find(item => element === item);
+}
 function findItem(element, collection) {
   return collection.find(item => element === item.barcode);
 }
