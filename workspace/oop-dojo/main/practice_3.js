@@ -15,7 +15,7 @@ class Student extends Person {
         this.class1 = class1;
     }
 
-    intruduce() {
+    introduce() {
         return `I am a Student. I am at Class ${this.class1}.`;
     }
 }
