@@ -16,7 +16,7 @@ class Student extends Person {
     }
 
     introduce() {
-        return `${super.introduce()} I am a Student. I am at Class ${this.class1}.`;
+        return `${super.introduce()} I am a Student. I am at Class ${this.class1.number}.`;
     }
 }
 
@@ -28,11 +28,20 @@ class Teacher extends Person {
     }
 
     introduce() {
-     //   if (this.class2) {
+        if (this.class2) {
             return `${super.introduce()} I am a Teacher. I teach Class ${this.class2}.`
-       // } else {
-         //   return `${super.introduce()} I am a Teacher. I teach No Class.`
-        //}
+        } else {
+            return `${super.introduce()} I am a Teacher. I am No class.`
+        }
+    }
+
+    introduceWith(student) {
+        if (student.class1.number === this.class2) {
+            return `My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.`;
+
+        } else {
+            return `My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.`;
+        }
     }
 }
 
@@ -46,10 +55,10 @@ class Worker extends Person {
     }
 }
 
-class obj {
+class Obj {
     constructor(number) {
         this.number = number;
     }
 }
 
-module.exports = {Person, Student, Worker, Teacher};
+module.exports = {Person, Student, Worker, Teacher, Obj};
