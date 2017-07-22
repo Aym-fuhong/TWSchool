@@ -14,7 +14,7 @@ class Student extends Person {
         this.class1 = class1;
     }
     introduce() {
-        return `${super.introduce()} I am a Student. I am at Class 2.`;
+        return `${super.introduce()} I am a Student. I am at Class ${this.class1}.`;
 
     }
 }
@@ -24,7 +24,7 @@ class Worker extends Person {
         super(name, age);
     }
     introduce() {
-        return `${this.introduce()} I am a Worker. I have a job.`
+        return `${super.introduce()} I am a Worker. I have a job.`
 
     }
 }
