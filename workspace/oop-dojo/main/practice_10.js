@@ -31,7 +31,6 @@ class Class {
     }
     assignLeader(student) {
         if(student.class1.number === this.number){
-            console.log(student.class1.number, 'into err=========');
             this.leader = 'Leader';
         } else {
             return `It is not one of us.`;
