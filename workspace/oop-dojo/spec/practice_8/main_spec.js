@@ -1,9 +1,9 @@
 "use strict";
-const {Person, Student, Worker, Teacher, Obj} = require('../../main/practice_8');
+const {Student, Teacher, Class} = require('../../main/practice_8');
 
 describe("O8入门", function () {
     it("覆盖同时复用父类的方法", function () {
-        const obj = new Obj(2);
+        const obj = new Class(2);
         const student = new Student('Tom', 21, obj);
         const result1 = `My name is Tom. I am 21 years old. I am a Student. I am at Class 2.`;
 
@@ -19,7 +19,7 @@ describe("O8入门", function () {
     });
 
     it('通过类获取class信息', function () {
-        const obj = new Obj(2);
+        const obj = new Class(2);
         const student = new Student('Jerry', 21, obj);
 
         const teacher1 = new Teacher('Tom', 21, 2);

@@ -22,7 +22,6 @@ class Student extends Person {
 
 class Teacher extends Person {
     constructor(name, age, class2) {
-        console.log('234567');
         super(name, age);
         this.class2 = class2;
     }
@@ -45,20 +44,11 @@ class Teacher extends Person {
     }
 }
 
-class Worker extends Person {
-    constructor(name, age) {
-        super(name, age);
-    }
 
-    introduce() {
-        return `${this.introduce()} I am a Worker. I have a job.`
-    }
-}
-
-class Obj {
+class Class {
     constructor(number) {
         this.number = number;
     }
 }
 
-module.exports = {Person, Student, Worker, Teacher, Obj};
+module.exports = {Person, Student, Teacher, Class};
