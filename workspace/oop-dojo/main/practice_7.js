@@ -22,7 +22,6 @@ class Student extends Person {
 
 class Teacher extends Person {
     constructor(name, age, class2) {
-        console.log('234567');
         super(name, age);
         this.class2 = class2;
     }
