@@ -18,7 +18,7 @@ class Student extends Person {
 
     introduce() {
         if(this.class1.leader){
-            return `${super.introduce()} I am a Student. I am ${this.class1.leader} of Class ${this.class1.number}.`;
+            return `${super.introduce()} I am a Student. I am Leader of Class ${this.class1.number}.`;
         } else {
             return `${super.introduce()} I am a Student. I am at Class ${this.class1.number}.`;
         }
@@ -30,7 +30,7 @@ class Class {
         this.number = number;
     }
     assignLeader(student) {
-      this.leader = 'Leader';
+      this.leader = student.id;
     }
 }
 

@@ -11,11 +11,9 @@ describe("10入门", function(){
         expect(student1.introduce()).toEqual(result1);
 
 
-        const student2 = new Student(1, 'Tom', 21, obj1);
-        obj1.appendMember(student1);
         obj1.assignLeader(student1);
         const result2 = `My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.`;
-        expect(student2.introduce()).toEqual(result2);
+        expect(student1.introduce()).toEqual(result2);
 
 
         const teacher1 = new Teacher(3, 'Tom', 21, [2, 3]);
