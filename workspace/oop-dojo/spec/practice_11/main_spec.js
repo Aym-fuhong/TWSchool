@@ -1,7 +1,7 @@
 "use strict";
 const {Student, Teacher, Class} = require('../../main/practice_11');
 
-describe("10入门", function(){
+describe("11入门", function(){
     it("对象之间的交互-5", function(){
         const obj1 = new Class(2);
         const student1 = new Student(1, 'Tom', 21, obj1);
