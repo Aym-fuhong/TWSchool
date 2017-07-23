@@ -39,7 +39,7 @@ class Class {
     }
 
     appendMember(student) {
-        student.class1.number = this.number;
+        student.class1 = this;
     }
 
     isIn(student) {

@@ -36,10 +36,10 @@ class Teacher extends Person {
 
     introduceWith(student) {
         if (student.class1.number === this.class2) {
-            return `My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.`;
+            return `${super.introduce()} I am a Teacher. I teach ${student.name}.`;
 
         } else {
-            return `My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.`;
+            return `${super.introduce()} I am a Teacher. I don't teach ${student.name}.`;
         }
     }
 }
