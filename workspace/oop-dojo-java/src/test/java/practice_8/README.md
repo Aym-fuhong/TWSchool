@@ -19,7 +19,7 @@ My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2.
 
 My name is Tom. I am 21 years old. I am a Teacher. I teach No Class.
 
-写一个introduceWith方法，传入一个student，比如Jerry，如果Jerry是Teacher教的班级则返回形如
+写一个introduceWith方法，传入一个student，比如Jerry，如果Jerry是Teacher教的班级则返回形如 
 
 My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.
 

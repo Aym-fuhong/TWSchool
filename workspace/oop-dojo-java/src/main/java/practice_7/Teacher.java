@@ -17,8 +17,6 @@ public class Teacher extends Person{
 
     public String introduce() {
         String result = super.introduce();
-        System.out.print("----------------");
-        System.out.print(this.klass);
         if(this.klass == 0) {
             result += " I am a Teacher. I teach No Class.";
         } else {
