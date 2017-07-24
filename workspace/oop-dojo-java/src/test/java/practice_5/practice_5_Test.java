@@ -12,7 +12,7 @@ public class practice_5_Test {
     @Test
     public void introduceTest() {
         Person tom = new Person("Tom", 21);
-        assertThat(tom.basicIntroduce(), is("My name is Tom. I am 21 years old."));
+        assertThat(tom.introduce(), is("My name is Tom. I am 21 years old."));
     }
 
     @Test

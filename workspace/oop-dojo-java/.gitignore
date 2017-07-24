@@ -25,7 +25,8 @@
 
 # CMake
 cmake-build-debug/
-
+build/
+.gradle/
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
 
