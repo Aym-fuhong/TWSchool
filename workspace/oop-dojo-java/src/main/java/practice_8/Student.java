@@ -1,10 +1,6 @@
 package practice_8;
 
-/**
- * Created by Hong on 24/07/2017.
- */
 public class Student extends Person {
-
     private String name;
     private int age;
     private Class klass;
