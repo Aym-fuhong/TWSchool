@@ -37,17 +37,36 @@ public class DealTest {
     @Test
     public void should_return_count_when_input_string_list() {
         //Given
-        String[] wordList = {"the", "day", "is", "sunny","the", "day", "is", "sunny","the"};
+        String[] wordList = {"the", "day", "is", "sunny", "the", "is", "is", "sunny", "the", "the"};
         Map<String, Integer> result = new HashMap();
-        result.put("the", 3);
-        result.put("day", 2);
+        result.put("the", 4);
+        result.put("day", 1);
         result.put("sunny", 2);
-        result.put("is", 2);
-
+        result.put("is", 3);
         Deal deal = new Deal();
         //when
-        Map<String, Integer> wordCount = deal.getCountOfWords(wordList);
+        Map<String, Integer> wordMap = deal.getCountOfWords(wordList);
         //then
-        assertThat(wordCount, is(result));
+        assertThat(wordMap, is(result));
+    }
+
+    @Test
+    public void should_return_sortedWordMap_when_input_wordMap() {
+        //Given
+        Map<String, Integer> wordMap = new HashMap();
+        wordMap.put("the", 4);
+        wordMap.put("day", 1);
+        wordMap.put("sunny", 2);
+        wordMap.put("is", 3);
+        Map<String, Integer> result = new HashMap();
+        result.put("the", 4);
+        result.put("is", 3);
+        result.put("sunny", 2);
+        result.put("day", 1);
+        Deal deal = new Deal();
+        //when
+        Map<String, Integer> sortedWordMap = deal.sortWordMap(wordMap);
+        //then
+        assertThat(sortedWordMap, is(result));
     }
 }

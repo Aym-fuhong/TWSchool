@@ -24,4 +24,8 @@ public class Deal {
         }
         return wordCount;
     }
+
+    public Map<String,Integer> sortWordMap(Map<String, Integer> wordMap) {
+        return MapUtil.sortByValue(wordMap);
+    }
 }
