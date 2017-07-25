@@ -69,4 +69,20 @@ public class DealTest {
         //then
         assertThat(sortedWordMap, is(result));
     }
+
+    @Test
+    public void should_return_wordString_when_input_sortedWordMap() {
+        //Given
+        Map<String, Integer> sortedWordMap = new HashMap();
+        sortedWordMap.put("the", 4);
+        sortedWordMap.put("is", 3);
+        sortedWordMap.put("sunny", 2);
+        sortedWordMap.put("day", 1);
+        Deal deal = new Deal();
+        String result = "the 4\nis 3\nsunny 2\nday 1\n";
+        //when
+        String wordString = deal.getWordString(sortedWordMap);
+        //then
+        assertThat(wordString, is(result));
+    }
 }
