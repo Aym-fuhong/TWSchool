@@ -85,4 +85,18 @@ public class DealTest {
         //then
         assertThat(wordString, is(result));
     }
+
+    @Test
+    public void should_return_string_when_load_file() {
+        //Given
+        String filePath = "/Users/Hong/Documents/git-projects/TWSchool/workspace/tdd-java-base/words.txt";
+        String result = "the the is sunny day day the is sunny";
+        Deal deal = new Deal();
+        //when
+        String words = deal.loadFile(filePath);
+        //then
+        assertThat(words, is(result));
+
+
+    }
 }
