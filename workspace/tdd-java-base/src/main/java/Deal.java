@@ -5,7 +5,7 @@ public class Deal {
 
 
     public String[] formatWords(String words) {
-        String[] wordList = words.split(" ");
+        String[] wordList = words.split(" +");
         return wordList;
     }
 }

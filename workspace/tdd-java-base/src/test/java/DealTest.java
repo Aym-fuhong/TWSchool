@@ -14,4 +14,12 @@ public class DealTest {
         Deal deal = new Deal();
         assertThat(deal.formatWords(words), is(result));
     }
+
+    @Test
+    public void should_return_string_list_when_input_string_include_more_space() throws Exception {
+        String words = "the day is   sunny";
+        String[] result = {"the", "day", "is", "sunny"};
+        Deal deal = new Deal();
+        assertThat(deal.formatWords(words), is(result));
+    }
 }
