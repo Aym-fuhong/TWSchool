@@ -39,11 +39,21 @@ public class MsTest {
     }
 
     @Test
-    public void should_return_add_student_info_when_input_error() throws Exception {
+    public void should_return_add_student_info_when_input_error_at_status_1() throws Exception {
         //Given
         String errAddStudentPromptString = constant.getErrString() + constant.getAddStudentFormat();
         ms.setDealString("1-*");
         String input = "t";
+        //when
+        this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
+    }
+
+    @Test
+    public void should_return_add_studnet_info_when_input_info_at_stauts_1() throws Exception {
+        //Given
+        String errAddStudentPromptString = "学生小明的成绩被添加\n" + constant.getAddStudentFormat();
+        ms.setDealString("1-*");
+        String input = "小明，1，数学：99，语文：88，英语：100，编程：99";
         //when
         this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
     }
