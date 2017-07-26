@@ -21,7 +21,8 @@ public class Ms {
         } else if ("1-*".equals(this.getDealString())) {
             result = this.return_add_student_info_when_input_1(input);
         } else if ("2".equals(this.getDealString())) {
-
+            result = constant.getStudentIdPrompt();
+            this.setDealString("2-*");
         } else if ("2-*".equals(this.getDealString())) {
 
         } else {
@@ -40,8 +41,7 @@ public class Ms {
 
     private boolean formatInput(String input) {
         boolean isFormated = false;
-//        if (input.matches(" ")) {
-        if (true) {
+        if (input.matches(" ")) {
             isFormated = true;
         }
         return isFormated;

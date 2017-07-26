@@ -35,7 +35,6 @@ public class MsTest {
         String input = "1";
         //when
         this.should_return_assertThat_when_input_test_data(input, addStudentPromptString);
-
     }
 
     @Test
@@ -56,6 +55,15 @@ public class MsTest {
         String input = "小明，1，数学：99，语文：88，英语：100，编程：99";
         //when
         this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
+    }
+
+    @Test
+    public void should_return_get_student_id_when_input_2() throws Exception {
+        //Given
+        String addStudentPromptString = constant.getStudentIdPrompt();
+        String input = "2";
+        //when
+        this.should_return_assertThat_when_input_test_data(input, addStudentPromptString);
     }
 
     @After
