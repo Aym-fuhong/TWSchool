@@ -50,20 +50,30 @@ public class MsTest {
     @Test
     public void should_return_add_studnet_info_when_input_info_at_stauts_1() throws Exception {
         //Given
-        String errAddStudentPromptString = "学生小明的成绩被添加\n" + constant.getAddStudentFormat();
+        String errgetStudentIdPromptString = "学生小明的成绩被添加\n" + constant.getAddStudentFormat();
         ms.setDealString("1-*");
         String input = "小明，1，数学：99，语文：88，英语：100，编程：99";
         //when
-        this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
+        this.should_return_assertThat_when_input_test_data(input, errgetStudentIdPromptString);
     }
 
     @Test
     public void should_return_get_student_id_when_input_2() throws Exception {
         //Given
-        String addStudentPromptString = constant.getStudentIdPrompt();
+        String getStudentIdPromptString = constant.getStudentIdPrompt();
         String input = "2";
         //when
-        this.should_return_assertThat_when_input_test_data(input, addStudentPromptString);
+        this.should_return_assertThat_when_input_test_data(input, getStudentIdPromptString);
+    }
+
+    @Test
+    public void should_return_get_student_id_when_input_error_at_status_2() throws Exception {
+        //Given
+        String errAddStudentPromptString = constant.getErrString() + constant.getStudentIdPrompt();
+        ms.setDealString("2-*");
+        String input = "t";
+        //when
+        this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
     }
 
     @After
