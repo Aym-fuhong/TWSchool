@@ -2,37 +2,67 @@ package managerScore;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 public class Class {
+    private List<Student> addStudentInfoList = new ArrayList<>();
+    private List<Student> searchStudentInfoList = new ArrayList<>();
 
-    private List<Student> studentInfoList = new ArrayList<Student>();
-
-    public void setStudentInfoList(List<Student> studentInfoList) {
-        this.studentInfoList = studentInfoList;
-    }
-
-    public List<Student> getStudentInfoList() {
-        return studentInfoList;
+    public void setAddStudentInfoList(List<Student> addStudentInfoList) {
+        this.addStudentInfoList = addStudentInfoList;
     }
 
     public List<Student> addStudentInfo(String input) {
         String[] infoList = input.trim().split("，");
-        this.studentInfoList.add(new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
+        this.addStudentInfoList.add(new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
                 infoList[3].split("：")[1], infoList[4].split("：")[1], infoList[5].split("：")[1]));
-        return studentInfoList;
+        return addStudentInfoList;
     }
 
     public ArrayList<Student> getStudentList(String input) {
         String[] splitedIds = input.trim().split("，");
-        ArrayList<Student> studentList = new ArrayList<Student>();
         for (int i = 0; i < splitedIds.length; i++) {
-            if (findOne(splitedIds[i], (ArrayList<Student>) this.getStudentInfoList()) != null) {
-                Student student = findOne(splitedIds[i], (ArrayList<Student>) this.getStudentInfoList());
-                studentList.add(student);
+            if (findOne(splitedIds[i], (ArrayList<Student>) this.addStudentInfoList) != null) {
+                Student student = findOne(splitedIds[i], (ArrayList<Student>) this.addStudentInfoList);
+                this.searchStudentInfoList.add(student);
             }
         }
-        return studentList;
+        return (ArrayList<Student>) this.searchStudentInfoList;
+    }
+
+    public float getAverageOfClass() {
+        int result = 0;
+        final int[] totalScore = {0};
+        if (this.searchStudentInfoList.size() > 0) {
+            searchStudentInfoList.forEach(student ->
+                    totalScore[0] += student.getStudentTotalScore()
+            );
+            result = totalScore[0] / this.searchStudentInfoList.size();
+        }
+        return (float) result;
+    }
+
+    public float getMedianOfClass() {
+        int result = 0;
+        List<Student> medianScoreList = new ArrayList<>();
+        if (this.searchStudentInfoList.size() > 0) {
+            medianScoreList = this.searchStudentInfoList.stream()
+                    .sorted((student1, student2) -> student1.getStudentTotalScore() - student2.getStudentTotalScore())
+                    .collect(Collectors.toList());
+            result = this.getMedian(medianScoreList);
+        }
+        return (float) result;
+    }
+
+    private int getMedian(List<Student> list) {
+        int median = 0;
+        int i = list.size() / 2;
+        if (list.size() % 2 == 0) {
+            median = (list.get(i).getStudentTotalScore() + list.get(i - 1).getStudentTotalScore()) / 2;
+        } else {
+            median = list.get(i).getStudentTotalScore();
+        }
+        return median;
     }
 
     private Student findOne(String element, ArrayList<Student> collection) {
@@ -44,4 +74,6 @@ public class Class {
         }
         return (Student) result;
     }
+
+
 }

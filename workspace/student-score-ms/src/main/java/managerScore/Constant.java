@@ -17,15 +17,14 @@ public class Constant {
             "张三|75|95|80|80|82.5|330\n" +
             "李四|85|80|70|90|81.25|325\n" +
             "========================\n" +
-            "全班总平均分：xxx\n" +
-            "全班总分中位数：xxx\n";
+            "全班总平均分：327.5\n" +
+            "全班总分中位数：327.5\n";
     private String noStudentScoreString = "成绩单\n" +
             "姓名|数学|语文|英语|编程|平均分|总分\n" +
             "========================\n" +
             "========================\n" +
-            "全班总平均分：xxx\n" +
-            "全班总分中位数：xxx\n";
-    public static ArrayList<Student> studentInfoList = new ArrayList<Student>();
+            "全班总平均分：0.0\n" +
+            "全班总分中位数：0.0\n";
 
     public String getMenuString() {
         return menuString;

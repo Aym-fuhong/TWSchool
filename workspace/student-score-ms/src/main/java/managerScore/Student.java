@@ -44,4 +44,9 @@ public class Student {
     public String getProgram() {
         return program;
     }
+
+    public int getStudentTotalScore() {
+        return Integer.parseInt(this.math) + Integer.parseInt(this.language)
+                +Integer.parseInt(this.english)+Integer.parseInt(this.program);
+    }
 }
