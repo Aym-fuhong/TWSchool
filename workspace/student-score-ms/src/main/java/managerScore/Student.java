@@ -1,4 +1,4 @@
-package ms;
+package managerScore;
 
 public class Student {
     private String name;
@@ -19,5 +19,29 @@ public class Student {
 
     public Student(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getMath() {
+        return math;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getEnglish() {
+        return english;
+    }
+
+    public String getProgram() {
+        return program;
     }
 }

@@ -1,4 +1,4 @@
-package ms;
+package managerScore;
 
 import org.junit.After;
 import org.junit.Test;
@@ -6,9 +6,9 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class MsTest {
+public class ManagerScoreTest {
     private Constant constant = new Constant();
-    private Ms ms = new Ms();
+    private ManagerScore ms = new ManagerScore();
 
     @Test
     public void should_return_menu_string_when_process_run() throws Exception {
@@ -74,6 +74,18 @@ public class MsTest {
         String input = "t";
         //when
         this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
+    }
+
+    @Test
+    public void should_return_get_student_score_when_input_id_at_stauts_2() throws Exception {
+        //Given
+        String errgetStudentIdPromptString = constant.getStudentScoreString();
+        Constant.studentInfoList.add(new Student("张三", "1", "75", "95","80","80"));
+        Constant.studentInfoList.add(new Student("李四", "2", "85", "80","70","90"));
+        ms.setDealString("2-*");
+        String input = "1，2";
+        //when
+        this.should_return_assertThat_when_input_test_data(input, errgetStudentIdPromptString);
     }
 
     @After
