@@ -1,11 +1,16 @@
 package managerScore;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ManagerScore {
     private Constant constant = new Constant();
     private Class klass = new Class();
     private String dealString;
+
+    public Class getKlass() {
+        return klass;
+    }
 
     public String getDealString() {
         return dealString;
@@ -31,11 +36,13 @@ public class ManagerScore {
             this.setDealString("1-*");
         } else if ("1-*".equals(this.getDealString())) {
             result = this.return_add_student_info_when_input_1(input);
+            this.setDealString("");
         } else if ("2".equals(this.getDealString())) {
             result = constant.getStudentIdPrompt();
             this.setDealString("2-*");
         } else if ("2-*".equals(this.getDealString())) {
             result = this.return_student_score_and_info_when_input_2(input);
+            this.setDealString("");
         }
         return result;
     }
@@ -43,8 +50,8 @@ public class ManagerScore {
     private String return_add_student_info_when_input_1(String input) {
         String result = constant.getErrString() + constant.getAddStudentFormat();
         if (Util.formatOneInput(input)) {
-            ArrayList<Student> studentInfoList = klass.addStudentInfo(input);
-            result = "学生" + studentInfoList.get(0).getName() + "的成绩被添加\n" + constant.getAddStudentFormat();
+            List<Student> studentInfoList = klass.addStudentInfo(input);
+            result = "学生" + studentInfoList.get(0).getName() + "的成绩被添加\n" + constant.getMenuString();
         }
         return result;
     }
@@ -53,7 +60,7 @@ public class ManagerScore {
         String result = constant.getErrString() + constant.getStudentIdPrompt();
         if (Util.formatTwoInput(input)) {
             ArrayList<Student> studentList = klass.getStudentList(input);
-            result = this.getStudentScoreString(studentList);
+            result = this.getStudentScoreString(studentList) + constant.getMenuString();
         }
         return result;
     }
@@ -68,6 +75,7 @@ public class ManagerScore {
         result += "========================\n" +
                 "全班总平均分：xxx\n" +
                 "全班总分中位数：xxx\n";
+        System.out.println(result);
         return result;
 
     }

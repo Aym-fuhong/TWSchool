@@ -2,6 +2,11 @@ package managerScore;
 
 import org.junit.After;
 import org.junit.Test;
+import org.mockito.Mock;
+import sun.jvm.hotspot.oops.Klass;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -48,9 +53,9 @@ public class ManagerScoreTest {
     }
 
     @Test
-    public void should_return_add_studnet_info_when_input_info_at_stauts_1() throws Exception {
+    public void should_return_add_studnent_info_when_input_info_at_stauts_1() throws Exception {
         //Given
-        String errgetStudentIdPromptString = "学生小明的成绩被添加\n" + constant.getAddStudentFormat();
+        String errgetStudentIdPromptString = "学生小明的成绩被添加\n" + constant.getMenuString();
         ms.setDealString("1-*");
         String input = "小明，1，数学：99，语文：88，英语：100，编程：99";
         //when
@@ -79,13 +84,25 @@ public class ManagerScoreTest {
     @Test
     public void should_return_get_student_score_when_input_id_at_stauts_2() throws Exception {
         //Given
-        String errgetStudentIdPromptString = constant.getStudentScoreString();
-        Constant.studentInfoList.add(new Student("张三", "1", "75", "95","80","80"));
-        Constant.studentInfoList.add(new Student("李四", "2", "85", "80","70","90"));
+        String studentScoretString = constant.getStudentScoreString() + constant.getMenuString();
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(new Student("张三", "1", "75", "95","80","80"));
+        studentList.add(new Student("李四", "2", "85", "80","70","90"));
+        ms.getKlass().setStudentInfoList(studentList);
         ms.setDealString("2-*");
         String input = "1，2";
         //when
-        this.should_return_assertThat_when_input_test_data(input, errgetStudentIdPromptString);
+        this.should_return_assertThat_when_input_test_data(input, studentScoretString);
+    }
+
+    @Test
+    public void should_return_get_student_score_when_input_not_exist_id_at_stauts_2() throws Exception {
+        //Given
+        String studentScoretString = constant.getNoStudentScoreString() + constant.getMenuString();
+        ms.setDealString("2-*");
+        String input = "5";
+        //when
+        this.should_return_assertThat_when_input_test_data(input, studentScoretString);
     }
 
     @After
