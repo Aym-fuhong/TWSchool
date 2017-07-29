@@ -1,6 +1,11 @@
 package managerScore;
 
+import managerScore.interfaces.StudentInterface;
+import managerScore.models.Student;
+import managerScore.services.StudentService;
+
 public class Util {
+    private StudentInterface studentInterface = new StudentService();
 
     public static boolean formatOneInput(String input) {
         boolean isFormated = false;
@@ -18,8 +23,9 @@ public class Util {
         return isFormated;
     }
 
-    public static String formatString(Student student) {
+    public String formatString(Student student) {
         return String.format("%s|%s|%s|%s|%s|%s|%s\n", student.getName(), student.getMath(), student.getLanguage(),
-                student.getEnglish(), student.getProgram(), student.getStudentTotalScore() / 4.0, student.getStudentTotalScore());
+                student.getEnglish(), student.getProgram(), studentInterface.getStudentTotalScore(student) / 4.0,
+                studentInterface.getStudentTotalScore(student));
     }
 }

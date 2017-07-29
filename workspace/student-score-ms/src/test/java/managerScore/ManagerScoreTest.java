@@ -1,5 +1,6 @@
 package managerScore;
 
+import managerScore.controller.ManagerScore;
 import org.junit.After;
 import org.junit.Test;
 

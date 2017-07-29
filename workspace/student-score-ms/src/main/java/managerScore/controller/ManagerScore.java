@@ -1,13 +1,15 @@
-package managerScore;
+package managerScore.controller;
 
-import managerScore.managerScoreServices.ManagerScoreService;
+import managerScore.Constant;
+import managerScore.interfaces.ManagerScoreInterface;
+import managerScore.services.ManagerScoreService;
 
 import java.util.Scanner;
 
 public class ManagerScore {
 
     private Constant constant = new Constant();
-    private ManagerScoreService managerScoreService = new ManagerScoreService();
+    private ManagerScoreInterface managerScoreService = new ManagerScoreService();
     private String dealString = "";
 
 

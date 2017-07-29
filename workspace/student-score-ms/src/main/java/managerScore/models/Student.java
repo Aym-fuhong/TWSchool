@@ -1,4 +1,4 @@
-package managerScore;
+package managerScore.models;
 
 public class Student {
     private String name;
@@ -15,6 +15,9 @@ public class Student {
         this.language = language;
         this.english = english;
         this.program = program;
+    }
+
+    public Student() {
     }
 
     public String getId() {
@@ -41,8 +44,8 @@ public class Student {
         return program;
     }
 
-    public int getStudentTotalScore() {
-        return Integer.parseInt(this.math) + Integer.parseInt(this.language)
-                +Integer.parseInt(this.english)+Integer.parseInt(this.program);
-    }
+//    public int getStudentTotalScore() {
+//        return Integer.parseInt(this.math) + Integer.parseInt(this.language)
+//                +Integer.parseInt(this.english)+Integer.parseInt(this.program);
+//    }
 }
