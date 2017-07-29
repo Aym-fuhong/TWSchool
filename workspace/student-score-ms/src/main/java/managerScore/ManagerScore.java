@@ -4,14 +4,10 @@ import managerScore.managerScoreServices.ManagerScoreService;
 
 public class ManagerScore {
 
-    private Class klass = new Class();
     private Constant constant = new Constant();
     private ManagerScoreService managerScoreService = new ManagerScoreService();
     private String dealString;
 
-    public Class getKlass() {
-        return klass;
-    }
 
     public String getDealString() {
         return dealString;

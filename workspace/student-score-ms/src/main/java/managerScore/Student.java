@@ -17,10 +17,6 @@ public class Student {
         this.program = program;
     }
 
-    public Student(String name) {
-        this.name = name;
-    }
-
     public String getId() {
         return id;
     }

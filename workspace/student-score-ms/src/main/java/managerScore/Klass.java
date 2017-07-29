@@ -8,10 +8,6 @@ public class Klass {
     private List<Student> addStudentInfoList = new ArrayList<>();
     private List<Student> searchStudentInfoList = new ArrayList<>();
 
-    public void setAddStudentInfoList(List<Student> addStudentInfoList) {
-        this.addStudentInfoList = addStudentInfoList;
-    }
-
     public List<Student> addStudentInfo(String input) {
         String[] infoList = input.trim().split("，");
         this.addStudentInfoList.add(new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
@@ -20,7 +16,6 @@ public class Klass {
     }
 
     public ArrayList<Student> getStudentList(String input) {
-        System.out.println("into class function");
         String[] splitedIds = input.trim().split("，");
         for (int i = 0; i < splitedIds.length; i++) {
             if (findOne(splitedIds[i], (ArrayList<Student>) this.addStudentInfoList) != null) {

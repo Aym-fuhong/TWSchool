@@ -1,10 +1,6 @@
 package managerScore.managerScoreServices;
 
-
-
 import managerScore.*;
-import managerScore.Class;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +8,7 @@ import java.util.List;
 public class ManagerScoreService {
 
     private Constant constant = new Constant();
-    private managerScore.Class klass = new Class();
+    private Klass klass = new Klass();
     private Report report = new Report();
 
    public String return_add_student_info_when_input_1(String input) {

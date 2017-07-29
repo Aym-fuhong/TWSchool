@@ -3,7 +3,6 @@ package managerScore;
 import java.util.ArrayList;
 
 public class Report {
-    private Class klass = new Class();
 
     public String getStudentScoreString(ArrayList<Student> studentList, float averageOfClass, float medianOfClass) {
         String result = "成绩单\n" +
