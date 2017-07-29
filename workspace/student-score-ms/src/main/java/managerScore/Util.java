@@ -1,7 +1,6 @@
 package managerScore;
 
 public class Util {
-    private Student student;
 
     public static boolean formatOneInput(String input) {
         boolean isFormated = false;

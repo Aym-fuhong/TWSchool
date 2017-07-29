@@ -2,11 +2,13 @@ package managerScore;
 
 import managerScore.managerScoreServices.ManagerScoreService;
 
+import java.util.Scanner;
+
 public class ManagerScore {
 
     private Constant constant = new Constant();
     private ManagerScoreService managerScoreService = new ManagerScoreService();
-    private String dealString;
+    private String dealString = "";
 
 
     public String getDealString() {
@@ -18,10 +20,8 @@ public class ManagerScore {
     }
 
     public void dealInput(String input) {
-        if (input != null) {
-            if (input.trim().matches("[123]")) {
+            if ("".equals(this.getDealString()) && input.trim().matches("[123]")) {
                 this.setDealString(input);
-            }
         }
     }
 
@@ -33,15 +33,32 @@ public class ManagerScore {
             this.setDealString("1-*");
         } else if ("1-*".equals(this.getDealString())) {
             result = managerScoreService.return_add_student_info_when_input_1(input);
-            this.setDealString("");
+            if(result.indexOf(constant.getErrString()) == -1){
+                this.setDealString("");
+            }
         } else if ("2".equals(this.getDealString())) {
             result = constant.getStudentIdPrompt();
             this.setDealString("2-*");
         } else if ("2-*".equals(this.getDealString())) {
             result = managerScoreService.return_student_score_and_info_when_input_2(input);
-            this.setDealString("");
+            if(result.indexOf(constant.getErrString()) == -1){
+                this.setDealString("");
+            }
+        } else if ("3".equals(this.getDealString())) {
+            System.exit(0);
+
         }
         return result;
+    }
+
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(constant.getMenuString());
+        while (scanner.hasNext()) {
+            String input = scanner.nextLine();
+            String result = print_studnent_score_ms(input);
+            System.out.println(result);
+        }
     }
 
 }
