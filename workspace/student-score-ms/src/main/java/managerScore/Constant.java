@@ -1,7 +1,5 @@
 package managerScore;
 
-import java.util.ArrayList;
-
 public class Constant {
     private String menuString = "1. 添加学生 \n" +
             "2. 生成成绩单 \n" +

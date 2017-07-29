@@ -23,7 +23,8 @@ public class ManagerScoreService implements ManagerScoreInterface {
         String result = constant.getErrString() + constant.getAddStudentFormat();
         if (Util.formatOneInput(input)) {
             List<Student> studentInfoList = klassInterface.addStudentInfo(klass, input);
-            result = "学生" + studentInfoList.get(0).getName() + "的成绩被添加\n" + constant.getMenuString();
+            result = "学生" + studentInfoList.get(studentInfoList.size() - 1).getName()
+                    + "的成绩被添加\n" + constant.getMenuString();
         }
         return result;
     }

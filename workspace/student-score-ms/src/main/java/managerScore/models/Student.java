@@ -17,9 +17,6 @@ public class Student {
         this.program = program;
     }
 
-    public Student() {
-    }
-
     public String getId() {
         return id;
     }
@@ -44,8 +41,4 @@ public class Student {
         return program;
     }
 
-//    public int getStudentTotalScore() {
-//        return Integer.parseInt(this.math) + Integer.parseInt(this.language)
-//                +Integer.parseInt(this.english)+Integer.parseInt(this.program);
-//    }
 }
