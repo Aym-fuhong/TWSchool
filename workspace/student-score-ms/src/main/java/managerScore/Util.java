@@ -21,6 +21,6 @@ public class Util {
 
     public static String formatString(Student student) {
         return String.format("%s|%s|%s|%s|%s|%s|%s\n", student.getName(), student.getMath(), student.getLanguage(),
-                student.getEnglish(), student.getProgram(), student.getStudentTotalScore(), student.getStudentTotalScore() / 4.0);
+                student.getEnglish(), student.getProgram(), student.getStudentTotalScore() / 4.0, student.getStudentTotalScore());
     }
 }

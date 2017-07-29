@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Class {
+public class Klass {
     private List<Student> addStudentInfoList = new ArrayList<>();
     private List<Student> searchStudentInfoList = new ArrayList<>();
 
@@ -20,6 +20,7 @@ public class Class {
     }
 
     public ArrayList<Student> getStudentList(String input) {
+        System.out.println("into class function");
         String[] splitedIds = input.trim().split("，");
         for (int i = 0; i < splitedIds.length; i++) {
             if (findOne(splitedIds[i], (ArrayList<Student>) this.addStudentInfoList) != null) {
@@ -33,11 +34,11 @@ public class Class {
     public float getAverageOfClass() {
         int result = 0;
         final int[] totalScore = {0};
-        if (this.addStudentInfoList.size() > 0) {
-            addStudentInfoList.forEach(student ->
+        if (this.searchStudentInfoList.size() > 0) {
+            searchStudentInfoList.forEach(student ->
                     totalScore[0] += student.getStudentTotalScore()
             );
-            result = totalScore[0] / this.addStudentInfoList.size();
+            result = totalScore[0] / this.searchStudentInfoList.size();
         }
         return (float) result;
     }
@@ -45,8 +46,8 @@ public class Class {
     public float getMedianOfClass() {
         int result = 0;
         List<Student> medianScoreList = new ArrayList<>();
-        if (this.addStudentInfoList.size() > 0) {
-            medianScoreList = this.addStudentInfoList.stream()
+        if (this.searchStudentInfoList.size() > 0) {
+            medianScoreList = this.searchStudentInfoList.stream()
                     .sorted((student1, student2) -> student1.getStudentTotalScore() - student2.getStudentTotalScore())
                     .collect(Collectors.toList());
             result = this.getMedian(medianScoreList);

@@ -28,7 +28,9 @@ public class ManagerScoreService {
         String result = constant.getErrString() + constant.getStudentIdPrompt();
         if (Util.formatTwoInput(input)) {
             ArrayList<Student> studentList = klass.getStudentList(input);
-            result = report.getStudentScoreString(studentList) + constant.getMenuString();
+            float averageOfClass = klass.getAverageOfClass();
+            float medianOfClass = klass.getMedianOfClass();
+            result = report.getStudentScoreString(studentList,averageOfClass, medianOfClass) + constant.getMenuString();
         }
         return result;
     }

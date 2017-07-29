@@ -3,14 +3,10 @@ package managerScore;
 import org.junit.After;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class ManagerScoreTest {
-    private Class klass = new Class();
     private Constant constant = new Constant();
     private ManagerScore ms = new ManagerScore();
 
@@ -84,10 +80,9 @@ public class ManagerScoreTest {
     public void should_return_get_student_score_when_input_id_at_stauts_2() throws Exception {
         //Given
         String studentScoretString = constant.getStudentScoreString() + constant.getMenuString();
-        List<Student> studentList = new ArrayList<>();
-        studentList.add(new Student("张三", "1", "75", "95", "80", "80"));
-        studentList.add(new Student("李四", "2", "85", "80", "70", "90"));
-        klass.setAddStudentInfoList(studentList);
+        ms.setDealString("1-*");
+        String input1 = "小明，1，数学：99，语文：88，英语：100，编程：99";
+        ms.print_studnent_score_ms(input1);
         ms.setDealString("2-*");
         String input = "1，2";
         //when
