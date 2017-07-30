@@ -3,5 +3,5 @@ package managerScore.interfaces;
 import managerScore.models.Report;
 
 public interface ReportInterface {
-    String getStudentScoreString(Report report);
+    StringBuffer getStudentScoreString(Report report);
 }

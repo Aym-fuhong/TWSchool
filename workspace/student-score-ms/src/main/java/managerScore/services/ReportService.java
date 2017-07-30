@@ -6,17 +6,16 @@ import managerScore.models.Report;
 
 public class ReportService implements ReportInterface {
 
-    public String getStudentScoreString(Report report) {
-        String result = "成绩单\n" +
-                "姓名|数学|语文|英语|编程|平均分|总分\n" +
-                "========================\n";
+    public StringBuffer getStudentScoreString(Report report) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("成绩单\n姓名|数学|语文|英语|编程|平均分|总分\n========================\n");
         for (int i = 0; i < report.getStudentList().size(); i++) {
-            result += new IOFilter().formatString(report.getStudentList().get(i));
+            sb.append(new IOFilter().formatString(report.getStudentList().get(i)));
         }
-        result += "========================\n" +
-                "全班总平均分：" + report.getAverageOfClass() + "\n" +
-                "全班总分中位数：" + report.getMedianOfClass() + "\n";
-        return result;
-
+        sb.append("========================\n全班总平均分：");
+        sb.append(report.getAverageOfClass());
+        sb.append("\n全班总分中位数：");
+        sb.append(report.getMedianOfClass());
+        return sb;
     }
 }
