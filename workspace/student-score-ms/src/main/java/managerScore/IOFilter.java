@@ -8,11 +8,11 @@ import managerScore.services.StudentService;
 public class IOFilter {
     private StudentInterface studentInterface = new StudentService();
 
-//    public void setStatus(ManagerScore managerScore , String input) {
-//        if ("".equals(managerScore.getCurrentStatus()) && input.trim().matches("[123]")) {
-//            managerScore.setCurrentStatus(input);
-//        }
-//    }
+    public void setStatus(ManagerScore managerScore , String input) {
+        if ("".equals(managerScore.getCurrentStatus()) && input.trim().matches("[123]")) {
+            managerScore.setCurrentStatus(input);
+        }
+    }
 
     public static boolean formatOneInput(String input) {
         boolean isFormated = false;

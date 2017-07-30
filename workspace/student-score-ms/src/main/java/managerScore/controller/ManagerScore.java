@@ -19,15 +19,10 @@ public class ManagerScore {
         this.currentStatus = currentStatus;
     }
 
-    public void dealInput(String input) {
-        if ("".equals(this.getCurrentStatus()) && input.trim().matches("[123]")) {
-            this.setCurrentStatus(input);
-        }
-    }
-
     public String print_studnent_score_ms(String input) {
         String result = Constant.menuString;
-        dealInput(input);
+        //dealInput(input);
+        new IOFilter().setStatus(this, input);
         if ("1".equals(this.getCurrentStatus())) {
             result = Constant.addStudentBegining + Constant.addStudentFormat;
             this.setCurrentStatus("1-*");
@@ -50,15 +45,4 @@ public class ManagerScore {
         }
         return result;
     }
-
-//    public void run() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println(constant.getMenuString());
-//        while (scanner.hasNext()) {
-//            String input = scanner.nextLine();
-//            String result = print_studnent_score_ms(input);
-//            System.out.println(result);
-//        }
-//    }
-
 }
