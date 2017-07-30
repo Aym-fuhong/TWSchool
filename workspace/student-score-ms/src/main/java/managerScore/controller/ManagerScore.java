@@ -2,46 +2,51 @@ package managerScore.controller;
 
 import managerScore.Constant;
 import managerScore.IOFilter;
+import managerScore.Status;
 import managerScore.interfaces.ManagerScoreInterface;
 import managerScore.services.ManagerScoreService;
 
 public class ManagerScore {
 
-    private String currentStatus;
+    private Status currentStatus = Status.wait_input;
 
     private ManagerScoreInterface managerScoreInterface = new ManagerScoreService();
 
-    public String getCurrentStatus() {
+    public Status getCurrentStatus() {
         return currentStatus;
     }
 
-    public void setCurrentStatus(String currentStatus) {
+    public void setCurrentStatus(Status currentStatus) {
         this.currentStatus = currentStatus;
     }
 
-    public String print_studnent_score_ms(String input) {
+    public String print_student_score_ms(String input) {
         String result = Constant.menuString;
-        //dealInput(input);
         new IOFilter().setStatus(this, input);
-        if ("1".equals(this.getCurrentStatus())) {
-            result = Constant.addStudentBegining + Constant.addStudentFormat;
-            this.setCurrentStatus("1-*");
-        } else if ("1-*".equals(this.getCurrentStatus())) {
-            result = managerScoreInterface.return_add_student_info_when_input_1(input);
-            if (result.indexOf(Constant.errString) == -1) {
-                this.setCurrentStatus("");
-            }
-        } else if ("2".equals(this.getCurrentStatus())) {
-            result = Constant.studentIdPrompt;
-            this.setCurrentStatus("2-*");
-        } else if ("2-*".equals(this.getCurrentStatus())) {
-            result = managerScoreInterface.return_student_score_and_info_when_input_2(input);
-            if (result.indexOf(Constant.errString) == -1) {
-                this.setCurrentStatus("");
-            }
-        } else if ("3".equals(this.getCurrentStatus())) {
-            System.exit(0);
-
+        switch (this.currentStatus) {
+            case wait_add_student_info:
+                result = Constant.addStudentBegining + Constant.addStudentFormat;
+                this.setCurrentStatus(Status.add_student_info);
+                break;
+            case add_student_info:
+                result = managerScoreInterface.return_add_student_info_when_input_1(input);
+                if (result.indexOf(Constant.errString) == -1) {
+                    this.setCurrentStatus(Status.wait_input);
+                }
+                break;
+            case wait_get_student_score_report:
+                result = Constant.studentIdPrompt;
+                this.setCurrentStatus(Status.get_student_score_report);
+                break;
+            case get_student_score_report:
+                result = managerScoreInterface.return_student_score_and_info_when_input_2(input);
+                if (result.indexOf(Constant.errString) == -1) {
+                    this.setCurrentStatus(Status.wait_input);
+                }
+                break;
+            case exit:
+                System.exit(0);
+                break;
         }
         return result;
     }

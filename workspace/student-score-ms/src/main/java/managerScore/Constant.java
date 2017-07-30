@@ -22,32 +22,4 @@ public class Constant {
             "========================\n" +
             "全班总平均分：0.0\n" +
             "全班总分中位数：0.0\n";
-
-//    public String getMenuString() {
-//        return menuString;
-//    }
-//
-//    public String getAddStudentBegining() {
-//        return addStudentBegining;
-//    }
-//
-//    public String getAddStudentFormat() {
-//        return addStudentFormat;
-//    }
-//
-//    public String getErrString() {
-//        return errString;
-//    }
-//
-//    public String getStudentIdPrompt() {
-//        return studentIdPrompt;
-//    }
-//
-//    public String getStudentScoreString() {
-//        return studentScoreString;
-//    }
-//
-//    public String getNoStudentScoreString() {
-//        return noStudentScoreString;
-//    }
 }
