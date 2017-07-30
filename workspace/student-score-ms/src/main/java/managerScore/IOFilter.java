@@ -8,14 +8,18 @@ import managerScore.services.StudentService;
 public class IOFilter {
     private StudentInterface studentInterface = new StudentService();
 
-    public void setStatus(ManagerScore managerScore , String input) {
+    public void setStatus(ManagerScore managerScore, String input) {
         if (Status.wait_input.equals(managerScore.getCurrentStatus()) && input.trim().matches("[123]")) {
-            if("1".equals(input)){
-                managerScore.setCurrentStatus(Status.wait_add_student_info);
-            } else  if("2".equals(input)){
-                managerScore.setCurrentStatus(Status.wait_get_student_score_report);
-            } else  if("3".equals(input)){
-                managerScore.setCurrentStatus(Status.exit);
+            switch (input) {
+                case "1":
+                    managerScore.setCurrentStatus(Status.wait_add_student_info);
+                    break;
+                case "2":
+                    managerScore.setCurrentStatus(Status.wait_get_student_score_report);
+                    break;
+                case "3":
+                    managerScore.setCurrentStatus(Status.exit);
+                    break;
             }
         }
     }
@@ -34,6 +38,17 @@ public class IOFilter {
             isFormated = true;
         }
         return isFormated;
+    }
+
+    public static Student getStudentInfo(String input) {
+        String[] infoList = input.trim().split("，");
+        return new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
+                infoList[3].split("：")[1], infoList[4].split("：")[1], infoList[5].split("：")[1]);
+    }
+
+    public static String[] getStudentsId(String input) {
+        String[] list = input.trim().split("，");
+        return list;
     }
 
     public String formatString(Student student) {

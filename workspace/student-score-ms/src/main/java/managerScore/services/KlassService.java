@@ -1,5 +1,6 @@
 package managerScore.services;
 
+import managerScore.IOFilter;
 import managerScore.interfaces.KlassInterface;
 import managerScore.interfaces.StudentInterface;
 import managerScore.models.Klass;
@@ -13,14 +14,13 @@ public class KlassService implements KlassInterface {
     private StudentInterface studentInterface = new StudentService();
 
     public List<Student> addStudentInfo(Klass klass, String input) {
-        String[] infoList = input.trim().split("，");
-        klass.getAddStudentInfoList().add(new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
-                infoList[3].split("：")[1], infoList[4].split("：")[1], infoList[5].split("：")[1]));
+        Student student = IOFilter.getStudentInfo(input);
+        klass.getAddStudentInfoList().add(student);
         return klass.getAddStudentInfoList();
     }
 
     public ArrayList<Student> getStudentList(Klass klass, String input) {
-        String[] splitedIds = input.trim().split("，");
+        String[] splitedIds = IOFilter.getStudentsId(input);
         ArrayList<Student> list = new ArrayList<>();
         for (int i = 0; i < splitedIds.length; i++) {
             if (findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList()) != null) {
