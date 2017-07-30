@@ -8,13 +8,12 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class ManagerScoreTest {
-    private Constant constant = new Constant();
     private ManagerScore ms = new ManagerScore();
 
     @Test
     public void should_return_menu_string_when_process_run() throws Exception {
         //Given
-        String menuString = constant.getMenuString();
+        String menuString = Constant.menuString;
         String input = null;
         //when
         this.should_return_assertThat_when_input_test_data(input, menuString);
@@ -23,7 +22,7 @@ public class ManagerScoreTest {
     @Test
     public void should_return_menu_string_when_menu_input_error() throws Exception {
         //Given
-        String menuString = constant.getMenuString();
+        String menuString = Constant.menuString;
         String input = "";
         //when
         this.should_return_assertThat_when_input_test_data(input, menuString);
@@ -32,7 +31,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_add_student_info_when_input_1() throws Exception {
         //Given
-        String addStudentPromptString = constant.getAddStudentBegining() + constant.getAddStudentFormat();
+        String addStudentPromptString = Constant.addStudentBegining + Constant.addStudentFormat;
+        ms.setCurrentStatus("1");
         String input = "1";
         //when
         this.should_return_assertThat_when_input_test_data(input, addStudentPromptString);
@@ -41,8 +41,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_add_student_info_when_input_error_at_status_1() throws Exception {
         //Given
-        String errAddStudentPromptString = constant.getErrString() + constant.getAddStudentFormat();
-        ms.setDealString("1-*");
+        String errAddStudentPromptString = Constant.errString + Constant.addStudentFormat;
+        ms.setCurrentStatus("1-*");
         String input = "t";
         //when
         this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
@@ -51,8 +51,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_add_studnent_info_when_input_info_at_stauts_1() throws Exception {
         //Given
-        String errgetStudentIdPromptString = "学生小明的成绩被添加\n" + constant.getMenuString();
-        ms.setDealString("1-*");
+        String errgetStudentIdPromptString = "学生小明的成绩被添加\n" + Constant.menuString;
+        ms.setCurrentStatus("1-*");
         String input = "小明，1，数学：99，语文：88，英语：100，编程：99";
         //when
         this.should_return_assertThat_when_input_test_data(input, errgetStudentIdPromptString);
@@ -61,7 +61,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_get_student_id_when_input_2() throws Exception {
         //Given
-        String getStudentIdPromptString = constant.getStudentIdPrompt();
+        String getStudentIdPromptString = Constant.studentIdPrompt;
+        ms.setCurrentStatus("2");
         String input = "2";
         //when
         this.should_return_assertThat_when_input_test_data(input, getStudentIdPromptString);
@@ -70,8 +71,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_get_student_id_when_input_error_at_status_2() throws Exception {
         //Given
-        String errAddStudentPromptString = constant.getErrString() + constant.getStudentIdPrompt();
-        ms.setDealString("2-*");
+        String errAddStudentPromptString = Constant.errString + Constant.studentIdPrompt;
+        ms.setCurrentStatus("2-*");
         String input = "t";
         //when
         this.should_return_assertThat_when_input_test_data(input, errAddStudentPromptString);
@@ -80,11 +81,11 @@ public class ManagerScoreTest {
     @Test
     public void should_return_get_student_score_when_input_id_at_stauts_2() throws Exception {
         //Given
-        String studentScoretString = constant.getStudentScoreString() + constant.getMenuString();
-        ms.setDealString("1-*");
+        String studentScoretString = Constant.studentScoreString + Constant.menuString;
+        ms.setCurrentStatus("1-*");
         String input1 = "小明，1，数学：99，语文：88，英语：100，编程：99";
         ms.print_studnent_score_ms(input1);
-        ms.setDealString("2-*");
+        ms.setCurrentStatus("2-*");
         String input = "1，2";
         //when
         this.should_return_assertThat_when_input_test_data(input, studentScoretString);
@@ -93,8 +94,8 @@ public class ManagerScoreTest {
     @Test
     public void should_return_get_student_score_when_input_not_exist_id_at_stauts_2() throws Exception {
         //Given
-        String studentScoretString = constant.getNoStudentScoreString() + constant.getMenuString();
-        ms.setDealString("2-*");
+        String studentScoretString = Constant.noStudentScoreString + Constant.menuString;
+        ms.setCurrentStatus("2-*");
         String input = "5";
         //when
         this.should_return_assertThat_when_input_test_data(input, studentScoretString);
@@ -102,7 +103,7 @@ public class ManagerScoreTest {
 
     @After
     public void tearDown() throws Exception {
-        this.ms.setDealString("");
+        ms.setCurrentStatus("");
     }
 
     private void should_return_assertThat_when_input_test_data(String input, String expectedData) throws Exception {

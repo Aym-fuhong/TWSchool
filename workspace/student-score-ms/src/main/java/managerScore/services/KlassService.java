@@ -21,7 +21,6 @@ public class KlassService implements KlassInterface {
 
     public ArrayList<Student> getStudentList(Klass klass, String input) {
         String[] splitedIds = input.trim().split("，");
-        System.out.println(splitedIds.length);
         ArrayList<Student> list = new ArrayList<>();
         for (int i = 0; i < splitedIds.length; i++) {
             if (findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList()) != null) {

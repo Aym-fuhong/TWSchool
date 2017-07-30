@@ -1,6 +1,6 @@
 package managerScore.services;
 
-import managerScore.Util;
+import managerScore.IOFilter;
 import managerScore.interfaces.ReportInterface;
 import managerScore.models.Report;
 
@@ -11,7 +11,7 @@ public class ReportService implements ReportInterface {
                 "姓名|数学|语文|英语|编程|平均分|总分\n" +
                 "========================\n";
         for (int i = 0; i < report.getStudentList().size(); i++) {
-            result += new Util().formatString(report.getStudentList().get(i));
+            result += new IOFilter().formatString(report.getStudentList().get(i));
         }
         result += "========================\n" +
                 "全班总平均分：" + report.getAverageOfClass() + "\n" +

@@ -18,3 +18,4 @@ public class Klass {
         this.searchStudentInfoList = searchStudentInfoList;
     }
 }
+
