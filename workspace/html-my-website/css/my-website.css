@@ -1,0 +1,31 @@
+body,html{
+    height: 100%;
+}
+#website-header {
+    display: block;
+    height: 12%;
+    background-color: black;
+}
+
+#website-body {
+    height:85%;
+    margin:0;
+}
+
+.website-nav {
+    float: left;
+    height: 100%;
+    width: 10%;
+    background-color: #eff0f1;
+}
+.website-section{
+    float: right;
+    height: 100%;
+    width: 90%;
+}
+
+#website-footer {
+    display: block;
+    height: 3%;
+    background-color: black;
+}
