@@ -4,48 +4,13 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
-*{
+
+* {
     box-sizing: border-box;
 }
+
 .website-nav {
     background-color: black;
-}
-
-.website-show {
-    background-image: url(img/56ca36f47bf53fc79c0c336e9bc6c594.jpg);
-    background-size: cover;
-    text-align: center;
-    height: 800px;
-}
-
-.website-key {
-    background-color: darkgray;
-    height: 450px;
-}
-
-.website-people {
-    background-color: aqua;
-    height: 450px;
-}
-
-.website-footer {
-    background-color: black;
-    height: 200px;
-}
-
-.key-left {
-    background-color: white;
-    height: 100%;
-}
-
-.key-right {
-    background-color: white;
-    height: 100%;
-}
-
-.people-center {
-    background-color: white;
-    height: 100%;
 }
 
 .nav-left {
@@ -54,33 +19,16 @@ body {
     width: 49%;
     display: inline-block;
 }
-.nav-left a{
+
+.nav-left a {
     color: white;
     text-decoration: none;
 }
+
 .nav-right {
     padding-left: 63px;
 }
-.content{
-    padding-top: 130px;
-    font-size: 50px;
-}
-.website-show h1{
-    font-size: 100px;
-    margin-bottom: 45px;
-}
-.website-show p{
-    margin-bottom: 100px;
-}
-.website-show a{
-    font-size: 28px;
-    text-decoration: none;
-    padding: 15px 30px;
-    margin-right: 20px;
-    border: 3px solid #FFF;
-    border-radius: 3px;
-    color: white;
-}
+
 .img {
     width: 50px;
     height: 50px;
@@ -94,7 +42,89 @@ body {
     text-align: right;
 }
 
-a{
+.website-show {
+    background-image: url(img/56ca36f47bf53fc79c0c336e9bc6c594.jpg);
+    background-size: cover;
+    text-align: center;
+    height: 800px;
+}
+
+.content {
+    padding-top: 130px;
+    font-size: 50px;
+}
+
+.website-show h1 {
+    font-size: 100px;
+    margin-bottom: 45px;
+}
+
+.website-show p {
+    margin-bottom: 100px;
+}
+
+.website-show a {
+    font-size: 28px;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin-right: 20px;
+    border: 3px solid #FFF;
+    border-radius: 3px;
+    color: white;
+}
+
+.website-key h1 {
+    letter-spacing: 2px;
+    font-size: 30px;
+    color: #777;
+}
+
+.key-header {
+    text-align: center;
+    padding-top: 70px;
+}
+
+.key-pic {
+    margin-top: -15px;
+    margin-bottom: 17px;
+}
+
+.pic {
+    padding: 50px 30px;
+    text-align: center;
+    height: 255px;
+}
+
+.pic img {
+    width: 80px;
+}
+
+.pic h5 {
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #999;
+}
+
+.website-people {
+    background-color: aqua;
+    height: 405px;
+}
+.people-header{
+    height: 100px;
+}
+.people {
+    background-color: pink;
+    height: 305px;
+}
+
+.website-footer {
+    background-color: black;
+    height: 200px;
+}
+
+a {
     text-decoration: none;
 }
 
