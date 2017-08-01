@@ -1,0 +1,43 @@
+
+.website-nav {
+    background-color: black;
+    height: 150px;
+    /*width: 1440px;*/
+    /*padding: 20px 30px;*/
+}
+
+.website-show {
+    background-color: pink;
+    text-align: center;
+    height: 800px;
+}
+
+.website-key {
+    background-color: darkgray;
+    height: 450px;
+}
+
+.website-people {
+    background-color: aqua;
+    height: 450px;
+}
+
+.website-footer {
+    background-color: black;
+    height: 200px;
+}
+
+.key-left {
+    background-color: white;
+    height: 100%;
+}
+
+.key-right {
+    background-color: white;
+    height: 100%;
+}
+
+.people-center {
+    background-color: white;
+    height: 100%;
+}
