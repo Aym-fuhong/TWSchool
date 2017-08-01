@@ -4,13 +4,16 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
-
+*{
+    box-sizing: border-box;
+}
 .website-nav {
     background-color: black;
 }
 
 .website-show {
-    background-color: pink;
+    background-image: url(img/56ca36f47bf53fc79c0c336e9bc6c594.jpg);
+    background-size: cover;
     text-align: center;
     height: 800px;
 }
@@ -51,11 +54,33 @@ body {
     width: 49%;
     display: inline-block;
 }
-
+.nav-left a{
+    color: white;
+    text-decoration: none;
+}
 .nav-right {
     padding-left: 63px;
 }
-
+.content{
+    padding-top: 130px;
+    font-size: 50px;
+}
+.website-show h1{
+    font-size: 100px;
+    margin-bottom: 45px;
+}
+.website-show p{
+    margin-bottom: 100px;
+}
+.website-show a{
+    font-size: 28px;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin-right: 20px;
+    border: 3px solid #FFF;
+    border-radius: 3px;
+    color: white;
+}
 .img {
     width: 50px;
     height: 50px;
@@ -69,7 +94,7 @@ body {
     text-align: right;
 }
 
-a {
+a{
     text-decoration: none;
 }
 
