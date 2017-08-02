@@ -92,7 +92,7 @@ body {
 .pic {
     padding: 50px 30px;
     text-align: center;
-    height: 255px;
+    /*height: 255px;*/
 }
 
 .pic img {
@@ -110,7 +110,7 @@ body {
 .website-people {
     text-align: center;
     background-color: #EFEFEF;
-    height: 405px;
+    /*height: 405px;*/
 }
 
 .website-people h1 {
@@ -178,8 +178,7 @@ body {
     display: block;
     width: 80px;
     height: 80px;
-    margin-bottom: 10px;
-    margin-left: 185px;
+    margin: auto;
     border-radius: 3px;
 }
 
