@@ -12,17 +12,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="website.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="website.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/website.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="97" column="31" lean-forward="false" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="447">
+              <caret line="97" column="29" lean-forward="false" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+              <folding>
+                <element signature="e#4141#4147#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="website.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="website.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/website.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="537">
@@ -52,8 +54,8 @@
       <list>
         <option value="$PROJECT_DIR$/website.css" />
         <option value="$PROJECT_DIR$/website.html" />
-        <option value="$PROJECT_DIR$/html/website.html" />
         <option value="$PROJECT_DIR$/css/website.css" />
+        <option value="$PROJECT_DIR$/html/website.html" />
       </list>
     </option>
   </component>
@@ -260,12 +262,12 @@
       <option name="presentableId" value="Default" />
       <updated>1501572140155</updated>
       <workItem from="1501572141694" duration="17089000" />
-      <workItem from="1501636257113" duration="3979000" />
+      <workItem from="1501636257113" duration="4184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21068000" />
+    <option name="totallyTimeSpent" value="21273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="6" />
@@ -320,7 +322,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#4141#4147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -332,19 +336,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/website.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="97" column="31" lean-forward="false" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/website.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
           <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/website.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="97" column="29" lean-forward="false" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+          <folding>
+            <element signature="e#4141#4147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
