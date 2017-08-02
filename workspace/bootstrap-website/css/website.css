@@ -167,12 +167,20 @@ body {
 }
 
 .website-footer {
+    color: #777;
+    text-align: center;
     background-color: black;
-    height: 200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-a {
-    text-decoration: none;
+.website-footer img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-left: 185px;
+    border-radius: 3px;
 }
 
 .white-font {
