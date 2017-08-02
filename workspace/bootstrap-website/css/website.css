@@ -43,7 +43,7 @@ body {
 }
 
 .website-show {
-    background-image: url(img/56ca36f47bf53fc79c0c336e9bc6c594.jpg);
+    background-image: url(../img/56ca36f47bf53fc79c0c336e9bc6c594.jpg);
     background-size: cover;
     text-align: center;
     height: 800px;
@@ -108,15 +108,62 @@ body {
 }
 
 .website-people {
-    background-color: aqua;
+    text-align: center;
+    background-color: #EFEFEF;
     height: 405px;
 }
-.people-header{
-    height: 100px;
+
+.website-people h1 {
+    letter-spacing: 2px;
+    font-size: 30px;
+    color: #777;
 }
-.people {
-    background-color: pink;
-    height: 305px;
+
+.people-introduce {
+    width: 340px;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.people-center {
+    margin-left: 50px;
+}
+
+.people-right {
+    margin-left: -22px;
+}
+
+.people-div {
+    text-align: left;
+}
+
+.people-div img {
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+}
+
+.people-div h5 {
+    letter-spacing: 0px;
+    color: black;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-bottom: 3px;
+
+}
+
+.people-div span {
+    font-size: 14px;
+    color: #999;
+}
+
+.author-center {
+    padding-left: 45px;
+}
+
+.author-right {
+    margin-left: -25px;
 }
 
 .website-footer {
