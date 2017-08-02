@@ -30,6 +30,10 @@
             <td align="right">
                 <div class="double-space"><input type="text" value="王小闹"></div>
             </td>
+            <td>E-mail：</td>
+            <td><input type="text"></td>
+            <td>ID：</td>
+            <td><input type="text"></td>
         </tr>
         </tbody>
     </table>
@@ -38,7 +42,7 @@
     <div>
         <h3>一、填空题（每空5分，共20分）</h3>
         <div class="space">
-            1.UML的中文全称是：<input type="text" value="统一建模语言"><br>
+            1.UML的中文全称是：<input class="aaa" type="text" value="统一建模语言"><br>
             2.对象最突出的特征是：<input type="text" value="封装性">
             <input type="text" value="继承性">
             <input type="text" value="多态性">
@@ -49,8 +53,8 @@
 
     <span class="space">1.UML与软件工程的关系是:</span>
     <ul>
-        <li type="none"><input type="radio" name="a">(A)UML就是软件工程</li>
-        <li type="none"><input type="radio" name="a" checked>(B)UML参与到软件工程中软件开发过程的几个阶段</li>
+        <li type="none"><input type="radio" name="a" value="A">(A)UML就是软件工程</li>
+        <li type="none"><input type="radio" name="a" checked value="B">(B)UML参与到软件工程中软件开发过程的几个阶段</li>
         <li type="none"><input type="radio" name="a">(C)UML与软件工程无关</li>
         <li type="none"><input type="radio" name="a">(D)UML是软件工程的一部分</li>
     </ul>
@@ -67,10 +71,10 @@
         <h3>三、多选题（每题10分，共20分）</h3>
         <span class="space">1.用例的粒度分为以下哪三种：</span>
         <ul>
-            <li type="none"><input type="checkbox" checked>(A)概述级</li>
-            <li type="none"><input type="checkbox" checked>(B)需求级</li>
-            <li type="none"><input type="checkbox">(C)用户目标级</li>
-            <li type="none"><input type="checkbox" checked>(D)子功能级</li>
+            <li type="none"><input type="checkbox" checked name="f" value="A">(A)概述级</li>
+            <li type="none"><input type="checkbox" checked name="f" value="B">(B)需求级</li>
+            <li type="none"><input type="checkbox" value="C" name="f">(C)用户目标级</li>
+            <li type="none"><input type="checkbox" checked value="D" name="f">(D)子功能级</li>
         </ul>
 
         <span class="space">2.类图由以下那三部分组成：</span>
@@ -108,9 +112,12 @@
     </div>
 </form>
 </body>
-<script>
+<script language="JavaScript">
     $(function () {
-        
+        $("form").submit(function () {
+            location.href = 'display.html';
+            return false;
+        });
     });
 </script>
 </html>
