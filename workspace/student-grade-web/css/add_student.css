@@ -46,15 +46,8 @@ body {
     height: 610px;
     padding-top: 20px;
 }
-.table{
-    text-align: center;
-    font-family:"Al Tarikh";
-}
-.table tr{
-    height: 30px;
-}
+
 .left{
-    width: 45%;
     text-align: right;
 }
 .right{
