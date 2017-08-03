@@ -51,9 +51,11 @@ body {
     text-align: center;
     font-family: "Al Tarikh";
 }
-.input-group{
+
+.input-group {
     margin-bottom: 30px;
 }
+
 .footer {
     color: white;
     padding-top: 13px;
