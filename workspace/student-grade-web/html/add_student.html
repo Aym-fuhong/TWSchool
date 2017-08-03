@@ -12,7 +12,64 @@
 </head>
 <body>
 <div class="container-fluid">
-    
+    <div class="header row">
+        <div class="col-md-6">
+            <i class="glyphicon glyphicon-home"></i>
+            <a href="#">student score web</a>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-pills">
+                <li><a href="html/add_student.html">Add Student</a></li>
+                <li><a href="html/search_student.html">Search Student</a></li>
+                <li><a href="html/report.html">Report</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content row">
+        <div class="info col-md-4 col-md-offset-4">
+            <form>
+                <table class="table">
+                    <thead><span>Add student Information</span></thead>
+                    <tr>
+                        <td class="left"><label>user name:</label></td>
+                        <td class="right"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>email:</label></td>
+                        <td class="right"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>phone</label></td>
+                        <td class="right"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>ID_card</label></td>
+                        <td class="right"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>native place</label></td>
+                        <td class="right">
+                            <select class="province">
+                                <option value="陕西省">陕西省</option>
+                                <option value="四川省">四川省</option>
+                                <option value="云南省">云南省</option>
+                            </select>
+                            <select class="city">
+                                <option value="成都市">成都市</option>
+                                <option value="西安市">西安市</option>
+                                <option value="昆明市">昆明市</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input class="btn btn-primary" type="submit" value="提交">
+            </form>
+        </div>
+    </div>
+    <div class="footer row">
+        Copyright &copy; 2017-2010
+    </div>
 </div>
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
