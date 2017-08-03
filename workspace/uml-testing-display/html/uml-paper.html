@@ -4,12 +4,12 @@
     <title>UML testing</title>
     <meta charset="UTF-8">
     <link href="../css/css.css" rel="stylesheet" type="text/css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
-    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 </head>
 
 <body>
-<form action="display.html" method="post" onsubmit="return check()">
+<form id="form-paper" action="display.html" method="get">
     <div>
         <h2>统一建模语言理论测试</h2>
         <table>
@@ -26,7 +26,7 @@
                 <td>班级：</td>
                 <td><input type="text" name='class' value="1班"></td>
                 <td>学号：</td>
-                <td><input type="text" name='student number' value="001"></td>
+                <td><input type="text" name='student_number' value="001"></td>
                 <td>姓名：</td>
                 <td align="right">
                     <div class="double-space"><input type="text" name='name' value="王闹"></div>
@@ -34,7 +34,7 @@
                 <td>E-mail：</td>
                 <td><input id="email"  type="text" name='email' value=""></td>
                 <td>ID Card：</td>
-                <td><input id="card"  name='ID Card' type="text" value=""></td>
+                <td><input id="card"  name='ID_Card' type="text" value=""></td>
             </tr>
             </tbody>
         </table>
@@ -75,7 +75,7 @@
             <li type="none"><input type="checkbox" checked name="multiple_choice_1" value="A">(A)概述级</li>
             <li type="none"><input type="checkbox" checked name="multiple_choice_1" value="B">(B)需求级</li>
             <li type="none"><input type="checkbox" name="multiple_choice_1" value="C">(C)用户目标级</li>
-            <li type=" none"><input type="checkbox" name="multiple_choice_1" value="D" checked>(D)子功能级
+            <li type="none"><input type="checkbox" name="multiple_choice_1" value="D" checked>(D)子功能级
             </li>
         </ul>
 
@@ -108,6 +108,7 @@
         <textarea class="double-space" rows="10" cols="100" name="content">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物和概念的一种表现形式。
         可以是物理实体；可以是某种图形；或者是一种数学表达式。
     </textarea></div>
+    <div id="error"></div>
     </div>
     <input type="submit" id="tijiao">计算分数</input>
     <div>
