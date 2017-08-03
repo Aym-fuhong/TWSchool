@@ -1,0 +1,9 @@
+.container-fluid{
+    text-align: center;
+    background-color: darkgray;
+}
+.site{
+    background-color: black;
+  width: 200px;
+    height: 300px;
+}
