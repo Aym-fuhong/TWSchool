@@ -1,5 +1,6 @@
 package com.student.services;
 
+import com.student.model.Address;
 import com.student.model.Employee;
 
 import java.util.ArrayList;
@@ -15,4 +16,6 @@ public interface EmployeeInterface {
     Boolean updateEmployeeById(int id, Employee employee);
 
     Boolean deleteEmployeeById(int id);
+
+    ArrayList<Address> getEmployeeAddress(int id);
 }

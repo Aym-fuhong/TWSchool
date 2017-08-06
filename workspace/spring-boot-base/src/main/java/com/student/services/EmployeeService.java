@@ -1,5 +1,6 @@
 package com.student.services;
 
+import com.student.model.Address;
 import com.student.model.Employee;
 import org.springframework.stereotype.Service;
 
@@ -65,5 +66,23 @@ public class EmployeeService implements EmployeeInterface {
         }
         return flag;
 
+    }
+
+    @Override
+    public ArrayList<Address> getEmployeeAddress(int id) {
+
+        ArrayList<Address> addressArrayList = new ArrayList<>();
+        addressArrayList.add(new Address("sichuan",
+                "chengdu", "wuhou", "tianfudadao", "178234", "home"));
+        addressArrayList.add(new Address("sichuan",
+                "chengdu", "wuhou", "tianfudadao", "178234", "company"));
+        Employee e = new Employee(1, "而通过", 2, addressArrayList);
+        employeeList.add(e);
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId() == id) {
+                return employeeList.get(i).getAddressList();
+            }
+        }
+        return null;
     }
 }

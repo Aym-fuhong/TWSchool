@@ -1,5 +1,6 @@
 package com.student.conroller;
 
+import com.student.model.Address;
 import com.student.model.Employee;
 import com.student.services.EmployeeInterface;
 import com.student.services.EmployeeService;
@@ -53,6 +54,11 @@ public class EmployeeController {
         } else {
             return HttpStatus.BAD_REQUEST;
         }
+    }
+    @RequestMapping(value = "employees/{id}/address", method = RequestMethod.GET)
+    public ResponseEntity<ArrayList> getEmployeeAddress(@PathVariable("id")int id){
+        ArrayList<Address> addressList = employeeInterface.getEmployeeAddress(id);
+        return new ResponseEntity<ArrayList>(addressList, HttpStatus.OK);
     }
 
 }
