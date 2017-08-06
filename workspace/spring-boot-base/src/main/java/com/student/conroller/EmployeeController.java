@@ -15,26 +15,35 @@ public class EmployeeController {
     @Autowired
     private EmployeeInterface employeeInterface = new EmployeeService();
 
-    @RequestMapping(value = "/employees", method = RequestMethod.POST)
-    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
-        employeeInterface.addEmployee(employee);
-        return new ResponseEntity<Employee>(employee, HttpStatus.CREATED);
-    }
-
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.GET)
-    public Employee getEmployeeById(@PathVariable("id") int id) {
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") int id) {
         Employee e = employeeInterface.getEmployeeById(id);
-        return e;
+        return new ResponseEntity<Employee>(e, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
-    public ArrayList<Employee> getEmployees() {
-        return employeeInterface.getEmployees();
+    public ResponseEntity<ArrayList> getEmployees() {
+        ArrayList<Employee> employeeArrayList = employeeInterface.getEmployees();
+        return new ResponseEntity<ArrayList>(employeeArrayList, HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/employees", method = RequestMethod.POST)
+    public HttpStatus addEmployee(@RequestBody Employee employee) {
+        if (employeeInterface.addEmployee(employee)) {
+            return HttpStatus.CREATED;
+        } else {
+            return HttpStatus.BAD_REQUEST;
+        }
     }
 
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.PUT)
-    public Employee updateEmployee(@PathVariable("id") int id, @RequestBody Employee employee) {
-        return employeeInterface.updateEmployeeById(id, employee);
+    public HttpStatus updateEmployee(@PathVariable("id") int id, @RequestBody Employee employee) {
+        if (employeeInterface.updateEmployeeById(id, employee)) {
+            return HttpStatus.OK;
+        } else {
+            return HttpStatus.BAD_REQUEST;
+        }
     }
 
     @RequestMapping(value = "employees/{id}", method = RequestMethod.DELETE)

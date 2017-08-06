@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public interface EmployeeInterface {
 
-    Employee addEmployee(Employee employee);
+    Boolean addEmployee(Employee employee);
 
     ArrayList<Employee> getEmployees();
 
     Employee getEmployeeById(int id);
 
-    Employee updateEmployeeById(int id, Employee employee);
+    Boolean updateEmployeeById(int id, Employee employee);
 
     Boolean deleteEmployeeById(int id);
 }

@@ -6,18 +6,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class EmployeeService implements EmployeeInterface{
+public class EmployeeService implements EmployeeInterface {
 
     private ArrayList<Employee> employeeList = new ArrayList<>();
 
     @Override
-    public Employee addEmployee(Employee employee) {
-        employeeList.add(employee);
-        return employee;
-    }
-
-    @Override
     public ArrayList<Employee> getEmployees() {
+        Employee e1 = new Employee(1, "而通过", 2);
+        Employee e2 = new Employee(2, "而规划", 2);
+        employeeList.add(e1);
+        employeeList.add(e2);
         return employeeList;
     }
 
@@ -34,13 +32,24 @@ public class EmployeeService implements EmployeeInterface{
     }
 
     @Override
-    public Employee updateEmployeeById(int id, Employee employee) {
+    public Boolean addEmployee(Employee employee) {
+        employeeList.add(employee);
+        return true;
+    }
+
+
+    @Override
+    public Boolean updateEmployeeById(int id, Employee employee) {
         Employee e = new Employee(1, "而通过", 2);
         employeeList.add(e);
-        Employee employee1 = employeeList.get(id);
-        employee1.setAge(employee.getAge());
-        employee1.setName(employee.getName());
-        return employee1;
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId() == id) {
+                employeeList.remove(employeeList.get(i));
+                employeeList.add(employee);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
