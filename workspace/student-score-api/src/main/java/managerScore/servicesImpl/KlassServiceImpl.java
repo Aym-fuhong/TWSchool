@@ -17,28 +17,13 @@ public class KlassServiceImpl implements KlassService {
     @Autowired
     private StudentService studentService;
 
-    //    public List<Student> addStudentInfo(Klass klass, String input) {
-//        Student student = IOFilter.getStudentInfo(input);
-//        klass.getAddStudentInfoList().add(student);
-//        return klass.getAddStudentInfoList();
-//    }
     public List<Student> addStudentInfo(Klass klass, Student student) {
+        int id = klass.getAddStudentInfoList().size();
+        student.setId(Integer.toString(id + 1));
         klass.getAddStudentInfoList().add(student);
         return klass.getAddStudentInfoList();
     }
 
-    //    public ArrayList<Student> getStudentList(Klass klass, String input) {
-//        String[] splitedIds = IOFilter.getStudentsId(input);
-//        ArrayList<Student> list = new ArrayList<>();
-//        for (int i = 0; i < splitedIds.length; i++) {
-//            if (findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList()) != null) {
-//                Student student = findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList());
-//                list.add(student);
-//            }
-//        }
-//        klass.setSearchStudentInfoList(list);
-//        return (ArrayList<Student>) klass.getSearchStudentInfoList();
-//    }
     public ArrayList<Student> getStudentList(Klass klass, String id) {
         String[] splitedIds = IOFilter.getStudentsId(id);
         ArrayList<Student> list = new ArrayList<>();

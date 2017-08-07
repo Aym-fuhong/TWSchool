@@ -11,6 +11,13 @@ public class Student {
     public Student() {
     }
 
+    public Student(String name, String math, String language, String english, String program) {
+        this.name = name;
+        this.math = math;
+        this.language = language;
+        this.english = english;
+        this.program = program;
+    }
     public Student(String id, String name, String math, String language, String english, String program) {
         this.name = name;
         this.id = id;
@@ -44,4 +51,7 @@ public class Student {
         return program;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }
