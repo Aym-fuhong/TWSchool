@@ -27,8 +27,20 @@ public class KlassServiceImpl implements KlassService {
         return klass.getAddStudentInfoList();
     }
 
-    public ArrayList<Student> getStudentList(Klass klass, String input) {
-        String[] splitedIds = IOFilter.getStudentsId(input);
+    //    public ArrayList<Student> getStudentList(Klass klass, String input) {
+//        String[] splitedIds = IOFilter.getStudentsId(input);
+//        ArrayList<Student> list = new ArrayList<>();
+//        for (int i = 0; i < splitedIds.length; i++) {
+//            if (findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList()) != null) {
+//                Student student = findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList());
+//                list.add(student);
+//            }
+//        }
+//        klass.setSearchStudentInfoList(list);
+//        return (ArrayList<Student>) klass.getSearchStudentInfoList();
+//    }
+    public ArrayList<Student> getStudentList(Klass klass, String id) {
+        String[] splitedIds = IOFilter.getStudentsId(id);
         ArrayList<Student> list = new ArrayList<>();
         for (int i = 0; i < splitedIds.length; i++) {
             if (findOne(splitedIds[i], (ArrayList<Student>) klass.getAddStudentInfoList()) != null) {

@@ -1,11 +1,21 @@
 package managerScore.servicesImpl;
 
+import managerScore.Constant;
 import managerScore.IOFilter;
+import managerScore.models.Klass;
 import managerScore.models.Report;
+import managerScore.models.Student;
+import managerScore.services.KlassService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class ReportServiceImpl implements managerScore.services.ReportService {
+    @Autowired
+    private KlassService klassService;
+    private Klass klass = new Klass();
 
     public StringBuffer getStudentScoreString(Report report) {
         StringBuffer sb = new StringBuffer();
@@ -19,4 +29,7 @@ public class ReportServiceImpl implements managerScore.services.ReportService {
         sb.append(report.getMedianOfClass());
         return sb;
     }
+
+
+
 }
