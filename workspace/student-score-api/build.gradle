@@ -31,7 +31,7 @@ buildscript {
 jacocoTestReport {
 afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ['com/ms/Application.class'])
+            fileTree(dir: it, exclude: ['managerScore/Application.class'])
         })
     }
   reports {

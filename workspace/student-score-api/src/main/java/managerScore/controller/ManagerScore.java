@@ -3,14 +3,14 @@ package managerScore.controller;
 import managerScore.Constant;
 import managerScore.IOFilter;
 import managerScore.Status;
-import managerScore.interfaces.ManagerScoreInterface;
 import managerScore.services.ManagerScoreService;
+import managerScore.servicesImpl.ManagerScoreServiceImpl;
 
 public class ManagerScore {
 
     private Status currentStatus = Status.wait_input;
 
-    private ManagerScoreInterface managerScoreInterface = new ManagerScoreService();
+    private ManagerScoreService managerScoreInterface = new ManagerScoreServiceImpl();
 
     public Status getCurrentStatus() {
         return currentStatus;

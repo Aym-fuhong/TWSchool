@@ -1,4 +1,5 @@
-import managerScore.Constant;
+package managerScore;
+
 import managerScore.controller.ManagerScore;
 
 import java.util.Scanner;

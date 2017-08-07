@@ -8,7 +8,10 @@ public class Student {
     private String english;
     private String program;
 
-    public Student(String name, String id, String math, String language, String english, String program) {
+    public Student() {
+    }
+
+    public Student(String id, String name, String math, String language, String english, String program) {
         this.name = name;
         this.id = id;
         this.math = math;

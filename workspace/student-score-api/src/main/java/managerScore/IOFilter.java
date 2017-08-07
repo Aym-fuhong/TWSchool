@@ -1,12 +1,12 @@
 package managerScore;
 
 import managerScore.controller.ManagerScore;
-import managerScore.interfaces.StudentInterface;
-import managerScore.models.Student;
 import managerScore.services.StudentService;
+import managerScore.models.Student;
+import managerScore.servicesImpl.StudentServiceImpl;
 
 public class IOFilter {
-    private StudentInterface studentInterface = new StudentService();
+    private StudentService studentInterface = new StudentServiceImpl();
 
     public void setStatus(ManagerScore managerScore, String input) {
         if (Status.wait_input.equals(managerScore.getCurrentStatus()) && input.trim().matches("[123]")) {
