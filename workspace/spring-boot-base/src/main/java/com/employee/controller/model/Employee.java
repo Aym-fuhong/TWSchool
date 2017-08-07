@@ -1,4 +1,6 @@
-package com.student.model;
+package com.employee.controller.model;
+
+import com.employee.controller.model.Address;
 
 import java.util.ArrayList;
 

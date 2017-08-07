@@ -1,4 +1,4 @@
-package com.student.model;
+package com.employee.controller.model;
 
 public class Address {
     private String province;
