@@ -1,6 +1,5 @@
 package managerScore;
 
-import managerScore.controller.ManagerScore;
 import managerScore.services.StudentService;
 import managerScore.models.Student;
 import managerScore.servicesImpl.StudentServiceImpl;
@@ -8,21 +7,6 @@ import managerScore.servicesImpl.StudentServiceImpl;
 public class IOFilter {
     private StudentService studentInterface = new StudentServiceImpl();
 
-    public void setStatus(ManagerScore managerScore, String input) {
-        if (Status.wait_input.equals(managerScore.getCurrentStatus()) && input.trim().matches("[123]")) {
-            switch (input) {
-                case "1":
-                    managerScore.setCurrentStatus(Status.wait_add_student_info);
-                    break;
-                case "2":
-                    managerScore.setCurrentStatus(Status.wait_get_student_score_report);
-                    break;
-                case "3":
-                    managerScore.setCurrentStatus(Status.exit);
-                    break;
-            }
-        }
-    }
 
     public static boolean formatOneInput(String input) {
         boolean isFormated = false;

@@ -1,7 +1,9 @@
 package managerScore.services;
+import managerScore.models.Klass;
+import managerScore.models.ReportItem;
 
-import managerScore.models.Report;
+import java.util.ArrayList;
 
 public interface ReportService {
-    StringBuffer getStudentScoreString(Report report);
+    ArrayList<ReportItem> getReportItem(Klass klass);
 }

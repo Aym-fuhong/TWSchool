@@ -3,12 +3,12 @@ package managerScore.models;
 import java.util.ArrayList;
 
 public class Report {
-    private ArrayList<Student> studentList;
+    private ArrayList<ReportItem> reportItem;
     private float averageOfClass;
     private float medianOfClass;
 
-    public ArrayList<Student> getStudentList() {
-        return studentList;
+    public ArrayList<ReportItem> getReportItem() {
+        return reportItem;
     }
 
     public float getAverageOfClass() {
@@ -19,8 +19,8 @@ public class Report {
         return medianOfClass;
     }
 
-    public Report(ArrayList<Student> studentList, float averageOfClass, float medianOfClass) {
-        this.studentList = studentList;
+    public Report(ArrayList<ReportItem> reportItem, float averageOfClass, float medianOfClass) {
+        this.reportItem = reportItem;
         this.averageOfClass = averageOfClass;
         this.medianOfClass = medianOfClass;
     }

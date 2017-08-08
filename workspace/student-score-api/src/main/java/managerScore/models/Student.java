@@ -1,5 +1,7 @@
 package managerScore.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Student {
     private String id;
     private String name;
@@ -42,6 +44,58 @@ public class Student {
         this.math = math;
         this.language = language;
         this.english = english;
+        this.program = program;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNative_place() {
+        return native_place;
+    }
+
+    public void setNative_place(String native_place) {
+        this.native_place = native_place;
+    }
+
+    public String getID_Card() {
+        return ID_Card;
+    }
+
+    public void setID_Card(String ID_Card) {
+        this.ID_Card = ID_Card;
+    }
+
+    public void setMath(String math) {
+        this.math = math;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public void setEnglish(String english) {
+        this.english = english;
+    }
+
+    public void setProgram(String program) {
         this.program = program;
     }
 
