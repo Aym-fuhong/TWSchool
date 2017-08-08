@@ -1,4 +1,3 @@
-
 $(function () {
     $("#form").validate({
         rules: {
