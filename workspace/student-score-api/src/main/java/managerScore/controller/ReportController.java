@@ -8,13 +8,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 public class ReportController {
     @Autowired
     private ManagerScoreService managerScoreService;
+//
+//    @RequestMapping(value = "/reports", method = RequestMethod.GET)
+//        public ResponseEntity<Report> getOneStudentReport(@RequestParam String id) {
+//            Report report = managerScoreService.getReport(id);
+//            return new ResponseEntity<Report>(report, HttpStatus.OK);
+//    }
 
     @RequestMapping(value = "/reports", method = RequestMethod.GET)
-    public ResponseEntity<Report> printReport(@RequestParam String id) {
-        Report report = managerScoreService.getReport(id);
+    public ResponseEntity<Report> getAllReport() {
+        Report report = managerScoreService.getAllReport();
         return new ResponseEntity<Report>(report, HttpStatus.OK);
     }
 }

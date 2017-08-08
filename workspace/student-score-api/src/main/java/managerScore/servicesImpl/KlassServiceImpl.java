@@ -40,11 +40,11 @@ public class KlassServiceImpl implements KlassService {
     public float getAverageOfClass(Klass klass) {
         int result = 0;
         final int[] totalScore = {0};
-        if (klass.getSearchStudentInfoList().size() > 0) {
-            klass.getSearchStudentInfoList().forEach(student ->
+        if (klass.getAddStudentInfoList().size() > 0) {
+            klass.getAddStudentInfoList().forEach(student ->
                     totalScore[0] += studentService.getStudentTotalScore(student)
             );
-            result = totalScore[0] / klass.getSearchStudentInfoList().size();
+            result = totalScore[0] / klass.getAddStudentInfoList().size();
         }
         return (float) result;
     }
@@ -52,8 +52,8 @@ public class KlassServiceImpl implements KlassService {
     public float getMedianOfClass(Klass klass) {
         int result = 0;
         List<Student> medianScoreList = new ArrayList<>();
-        if (klass.getSearchStudentInfoList().size() > 0) {
-            medianScoreList = klass.getSearchStudentInfoList().stream()
+        if (klass.getAddStudentInfoList().size() > 0) {
+            medianScoreList = klass.getAddStudentInfoList().stream()
                     .sorted((student1, student2) -> studentService.getStudentTotalScore(student1)
                             - studentService.getStudentTotalScore(student2))
                     .collect(Collectors.toList());

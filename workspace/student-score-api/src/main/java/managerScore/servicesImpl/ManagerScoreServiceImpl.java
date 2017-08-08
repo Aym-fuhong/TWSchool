@@ -52,6 +52,15 @@ public class ManagerScoreServiceImpl implements managerScore.services.ManagerSco
     }
 
     @Override
+    public Report getAllReport() {
+        List<Student> studentList = klass.getAddStudentInfoList();
+        float averageOfClass = klassService.getAverageOfClass(klass);
+        float medianOfClass = klassService.getMedianOfClass(klass);
+        Report report = new Report((ArrayList<Student>) studentList, averageOfClass, medianOfClass);
+        return report;
+    }
+
+    @Override
     public List<Student> addStudent(Student student) {
         List<Student> studentInfoList = klassService.addStudentInfo(klass, student);
         return studentInfoList;

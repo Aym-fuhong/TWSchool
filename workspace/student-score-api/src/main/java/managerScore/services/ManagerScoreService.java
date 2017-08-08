@@ -13,4 +13,5 @@ public interface ManagerScoreService {
     List<Student> addStudent(Student student);
     Report getReport(String id);
 
+    Report getAllReport();
 }
