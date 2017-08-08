@@ -18,13 +18,12 @@ public class ManagerScoreServiceImpl implements managerScore.services.ManagerSco
     @Autowired
     private KlassService klassService;
     @Autowired
-    private  ReportService reportService;
+    private ReportService reportService;
     private Klass klass = new Klass();
-
 
     @Override
     public Report getAllReport() {
-       ArrayList<ReportItem> reportItemArrayList = reportService.getReportItem(klass);
+        ArrayList<ReportItem> reportItemArrayList = reportService.getReportItem(klass);
         float averageOfClass = klassService.getAverageOfClass(klass);
         float medianOfClass = klassService.getMedianOfClass(klass);
         Report report = new Report((ArrayList<ReportItem>) reportItemArrayList, averageOfClass, medianOfClass);
@@ -37,4 +36,9 @@ public class ManagerScoreServiceImpl implements managerScore.services.ManagerSco
         return studentInfoList;
     }
 
+    @Override
+    public ArrayList<Student> getAllStudentList() {
+        ArrayList<Student> studentArrayList = klassService.getAllStudentList(klass);
+        return studentArrayList;
+    }
 }

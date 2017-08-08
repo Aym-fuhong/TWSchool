@@ -15,4 +15,5 @@ public interface KlassService {
     float getMedianOfClass(Klass klass);
     int getMedian(List<Student> list);
     Student findOne(String element, ArrayList<Student> collection);
+    ArrayList<Student> getAllStudentList(Klass klass);
 }

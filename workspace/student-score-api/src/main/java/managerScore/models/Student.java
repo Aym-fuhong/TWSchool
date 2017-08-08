@@ -8,7 +8,7 @@ public class Student {
     private String phone;
     private String email;
     private String native_place;
-    private String ID_Card;
+    private String id_Card;
     private String math;
     private String language;
     private String english;
@@ -23,7 +23,7 @@ public class Student {
         this.phone = phone;
         this.email = email;
         this.native_place = native_place;
-        this.ID_Card = ID_Card;
+        this.id_Card = ID_Card;
         this.math = math;
         this.language = language;
         this.english = english;
@@ -76,11 +76,11 @@ public class Student {
     }
 
     public String getID_Card() {
-        return ID_Card;
+        return id_Card;
     }
 
     public void setID_Card(String ID_Card) {
-        this.ID_Card = ID_Card;
+        this.id_Card = ID_Card;
     }
 
     public void setMath(String math) {

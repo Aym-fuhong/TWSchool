@@ -24,6 +24,11 @@ public class KlassServiceImpl implements KlassService {
         return klass.getAddStudentInfoList();
     }
 
+
+    public ArrayList<Student> getAllStudentList(Klass klass) {
+        return (ArrayList<Student>) klass.getAddStudentInfoList();
+    }
+
     public ArrayList<Student> getStudentList(Klass klass, String id) {
         String[] splitedIds = IOFilter.getStudentsId(id);
         ArrayList<Student> list = new ArrayList<>();

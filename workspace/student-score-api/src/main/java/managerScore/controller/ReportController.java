@@ -12,12 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class ReportController {
     @Autowired
     private ManagerScoreService managerScoreService;
-//
-//    @RequestMapping(value = "/reports", method = RequestMethod.GET)
-//        public ResponseEntity<Report> getOneStudentReport(@RequestParam String id) {
-//            Report report = managerScoreService.getReport(id);
-//            return new ResponseEntity<Report>(report, HttpStatus.OK);
-//    }
 
     @RequestMapping(value = "/reports", method = RequestMethod.GET)
     public ResponseEntity<Report> getAllReport() {
