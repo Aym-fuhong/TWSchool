@@ -1,12 +1,8 @@
 package managerScore;
 
-import managerScore.services.StudentService;
 import managerScore.models.Student;
-import managerScore.servicesImpl.StudentServiceImpl;
 
 public class IOFilter {
-    private StudentService studentInterface = new StudentServiceImpl();
-
 
     public static boolean formatOneInput(String input) {
         boolean isFormated = false;

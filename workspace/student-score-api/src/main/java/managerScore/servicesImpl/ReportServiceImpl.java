@@ -1,14 +1,8 @@
 package managerScore.servicesImpl;
 
-import managerScore.Constant;
-import managerScore.IOFilter;
 import managerScore.models.Klass;
-import managerScore.models.Report;
 import managerScore.models.ReportItem;
 import managerScore.models.Student;
-import managerScore.services.KlassService;
-import managerScore.services.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,8 +11,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReportServiceImpl implements managerScore.services.ReportService {
-    @Autowired
-    private StudentService studentService;
 
     public ArrayList<ReportItem> getReportItem(Klass klass){
        ArrayList<ReportItem> reportItemArrayList = new ArrayList<>();

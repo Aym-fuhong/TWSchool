@@ -20,4 +20,9 @@ public class ClassController {
         ArrayList<Student> studentArrayList = managerScoreService.getAllStudentList();
         return new ResponseEntity<ArrayList<Student>>(studentArrayList, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/student/{id}", method = RequestMethod.GET)
+    public Student getStudentById(@PathVariable String id){
+        return null;
+    }
 }
