@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>search_student</title>
+    <title>student_grade</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="../css/search_student.css" rel="stylesheet">
+    <link href="../css/add_student.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -27,25 +28,33 @@
         </div>
     </div>
     <div class="content row">
-        <div class="info col-md-6 col-md-offset-3">
-            <div class="input-group">
-                <input id="id" type="text" class="form-control" placeholder="Recipient's username">
-                <i class="input-group-addon glyphicon glyphicon-search" onclick="search()"></i>
-            </div>
-            <table id="table" class="table table-hover">
-                <thead class="table-inverse"></thead>
-                <tbody id="tbody">
-                <tr>
-                    <th>ID</th>
-                    <th>user name</th>
-                    <th>email</th>
-                    <th>ID Card</th>
-                    <th>phone</th>
-                    <th>native place</th>
-                </tr>
-                </tbody>
-
-            </table>
+        <div class="info col-md-4 col-md-offset-4">
+            <form id="form" action="#">
+                <table class="table">
+                    <thead><span>Add student grade</span></thead>
+                    <tr>
+                        <td class="left"><label>id:</label></td>
+                        <td class="right"><input name="id" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>math:</label></td>
+                        <td class="right"><input name="math" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>language:</label></td>
+                        <td class="right"><input name="language" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>english:</label></td>
+                        <td class="right"><input name="english" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><label>program:</label></td>
+                        <td class="right"><input name="program" type="text"></td>
+                    </tr>
+                </table>
+                <input class="btn btn-primary" type="submit" value="提交">
+            </form>
         </div>
     </div>
     <div class="footer row">
@@ -58,5 +67,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="../js/search_student.js"></script>
+<script src="../js/add_student.js"></script>
 </html>

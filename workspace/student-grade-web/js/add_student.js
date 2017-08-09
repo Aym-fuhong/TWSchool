@@ -1,7 +1,7 @@
 $(function () {
     $("#form").validate({
         rules: {
-            user_name: "required",
+            name: "required",
             math: "required",
             language: "required",
             english: "required",
@@ -12,14 +12,14 @@ $(function () {
                 required: true,
                 email: true
             },
-            ID_Card: {
+            id_Card: {
                 required: true,
                 minlength: 5
 
             }
         },
         messages: {
-            user_name: "请输入姓名",
+            name: "请输入姓名",
             math: {
                 required: "数学成绩不能为空",
             },
@@ -38,7 +38,7 @@ $(function () {
                 required: "邮箱不能为空",
                 email: "邮箱格式错误"
             },
-            ID_Card: {
+            id_Card: {
                 required: "身份证号不能为空",
                 minlength: "身份证号长度不能小于5"
             }
