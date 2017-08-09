@@ -34,10 +34,4 @@ public class IOFilter {
         String[] list = input.trim().split("，");
         return list;
     }
-
-    public String formatString(Student student) {
-        return String.format("%s|%s|%s|%s|%s|%s|%s\n", student.getName(), student.getMath(), student.getLanguage(),
-                student.getEnglish(), student.getProgram(), studentInterface.getStudentTotalScore(student) / 4.0,
-                studentInterface.getStudentTotalScore(student));
-    }
 }

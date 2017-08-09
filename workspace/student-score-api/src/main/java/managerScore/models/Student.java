@@ -1,7 +1,5 @@
 package managerScore.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class Student {
     private String id;
     private String name;

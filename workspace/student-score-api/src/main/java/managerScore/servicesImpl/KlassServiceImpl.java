@@ -42,42 +42,42 @@ public class KlassServiceImpl implements KlassService {
         return (ArrayList<Student>) klass.getSearchStudentInfoList();
     }
 
-    public float getAverageOfClass(Klass klass) {
-        int result = 0;
-        final int[] totalScore = {0};
-        if (klass.getAddStudentInfoList().size() > 0) {
-            klass.getAddStudentInfoList().forEach(student ->
-                    totalScore[0] += studentService.getStudentTotalScore(student)
-            );
-            result = totalScore[0] / klass.getAddStudentInfoList().size();
-        }
-        return (float) result;
-    }
-
-    public float getMedianOfClass(Klass klass) {
-        int result = 0;
-        List<Student> medianScoreList = new ArrayList<>();
-        if (klass.getAddStudentInfoList().size() > 0) {
-            medianScoreList = klass.getAddStudentInfoList().stream()
-                    .sorted((student1, student2) -> studentService.getStudentTotalScore(student1)
-                            - studentService.getStudentTotalScore(student2))
-                    .collect(Collectors.toList());
-            result = this.getMedian(medianScoreList);
-        }
-        return (float) result;
-    }
-
-    public int getMedian(List<Student> list) {
-        int median = 0;
-        int i = list.size() / 2;
-        if (list.size() % 2 == 0) {
-            median = (studentService.getStudentTotalScore(list.get(i))
-                    + studentService.getStudentTotalScore(list.get(i - 1))) / 2;
-        } else {
-            median = studentService.getStudentTotalScore(list.get(i));
-        }
-        return median;
-    }
+//    public float getAverageOfClass(Klass klass) {
+//        int result = 0;
+//        final int[] totalScore = {0};
+//        if (klass.getAddStudentInfoList().size() > 0) {
+//            klass.getAddStudentInfoList().forEach(student ->
+//                    totalScore[0] += studentService.getStudentTotalScore(student)
+//            );
+//            result = totalScore[0] / klass.getAddStudentInfoList().size();
+//        }
+//        return (float) result;
+//    }
+//
+//    public float getMedianOfClass(Klass klass) {
+//        int result = 0;
+//        List<Student> medianScoreList = new ArrayList<>();
+//        if (klass.getAddStudentInfoList().size() > 0) {
+//            medianScoreList = klass.getAddStudentInfoList().stream()
+//                    .sorted((student1, student2) -> studentService.getStudentTotalScore(student1)
+//                            - studentService.getStudentTotalScore(student2))
+//                    .collect(Collectors.toList());
+//            result = this.getMedian(medianScoreList);
+//        }
+//        return (float) result;
+//    }
+//
+//    public int getMedian(List<Student> list) {
+//        int median = 0;
+//        int i = list.size() / 2;
+//        if (list.size() % 2 == 0) {
+//            median = (studentService.getStudentTotalScore(list.get(i))
+//                    + studentService.getStudentTotalScore(list.get(i - 1))) / 2;
+//        } else {
+//            median = studentService.getStudentTotalScore(list.get(i));
+//        }
+//        return median;
+//    }
 
     public Student findOne(String element, ArrayList<Student> collection) {
         Object result = null;
