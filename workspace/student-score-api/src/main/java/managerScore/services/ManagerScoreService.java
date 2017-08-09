@@ -14,4 +14,6 @@ public interface ManagerScoreService {
     Report getAllReport();
 
     ArrayList<Student> getAllStudentList();
+
+    ArrayList<Student> getStudentById(String id);
 }

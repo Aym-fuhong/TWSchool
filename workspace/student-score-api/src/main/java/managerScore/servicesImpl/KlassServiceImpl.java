@@ -19,7 +19,7 @@ public class KlassServiceImpl implements KlassService {
         return klass;
     }
 
-    public List<Student> addStudentInfo(Klass klass, Student student) {
+    public List<Student> addStudentInfo(Student student) {
         int id = klass.getAddStudentInfoList().size();
         student.setId(Integer.toString(id + 1));
         klass.getAddStudentInfoList().add(student);
@@ -27,11 +27,11 @@ public class KlassServiceImpl implements KlassService {
     }
 
 
-    public ArrayList<Student> getAllStudentList(Klass klass) {
+    public ArrayList<Student> getAllStudentList() {
         return (ArrayList<Student>) klass.getAddStudentInfoList();
     }
 
-    public ArrayList<Student> getStudentList(Klass klass, String id) {
+    public ArrayList<Student> getStudentList(String id) {
         String[] splitedIds = IOFilter.getStudentsId(id);
         ArrayList<Student> list = new ArrayList<>();
         for (int i = 0; i < splitedIds.length; i++) {

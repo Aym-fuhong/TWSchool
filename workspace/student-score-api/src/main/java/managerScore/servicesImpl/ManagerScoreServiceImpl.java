@@ -31,13 +31,19 @@ public class ManagerScoreServiceImpl implements managerScore.services.ManagerSco
 
     @Override
     public List<Student> addStudent(Student student) {
-        List<Student> studentInfoList = klassService.addStudentInfo(klassService.createKlass(), student);
+        List<Student> studentInfoList = klassService.addStudentInfo(student);
         return studentInfoList;
     }
 
     @Override
     public ArrayList<Student> getAllStudentList() {
-        ArrayList<Student> studentArrayList = klassService.getAllStudentList(klassService.createKlass());
+        ArrayList<Student> studentArrayList = klassService.getAllStudentList();
+        return studentArrayList;
+    }
+
+    @Override
+    public ArrayList<Student> getStudentById(String id) {
+        ArrayList<Student> studentArrayList = klassService.getStudentList(id);
         return studentArrayList;
     }
 }
