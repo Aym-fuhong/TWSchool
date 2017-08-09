@@ -1,8 +1,12 @@
 package managerScore.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 
+
 public class Report {
+
+    private String id;
     private ArrayList<ReportItem> reportItem;
     private float averageOfClass;
     private float medianOfClass;

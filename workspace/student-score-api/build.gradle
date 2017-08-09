@@ -13,6 +13,10 @@ apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'org.springframework.boot'
 
+jar {
+    baseName = 'gs-accessing-data-jpa'
+    version = '0.1.0'
+}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -29,16 +33,16 @@ buildscript {
     }
 }
 jacocoTestReport {
-afterEvaluate {
+    afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it, exclude: ['managerScore/Application.class'])
         })
     }
-  reports {
-    xml.enabled false
-    csv.enabled false
-    html.destination "${buildDir}/jacocoHtml"
-  }
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
 check.dependsOn jacocoTestReport
@@ -54,8 +58,10 @@ repositories {
 }
 
 dependencies {
-       compile("org.springframework.boot:spring-boot-starter-web")
-       testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 

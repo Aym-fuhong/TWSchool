@@ -72,8 +72,9 @@ public class ReportServiceImpl implements managerScore.services.ReportService {
     }
 
     public int getStudentTotalScore(Student student) {
-        return Integer.parseInt(student.getMath()) + Integer.parseInt(student.getLanguage())
-                + Integer.parseInt(student.getEnglish()) + Integer.parseInt(student.getProgram());
+//        return Integer.parseInt(student.getMath()) + Integer.parseInt(student.getLanguage())
+//                + Integer.parseInt(student.getEnglish()) + Integer.parseInt(student.getProgram());
+        return 0;
     }
 
     @Override

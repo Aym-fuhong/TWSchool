@@ -1,12 +1,9 @@
 package managerScore.servicesImpl;
 
-import managerScore.*;
-import managerScore.models.ReportItem;
-import managerScore.services.KlassService;
-import managerScore.services.ReportService;
-import managerScore.models.Klass;
 import managerScore.models.Report;
 import managerScore.models.Student;
+import managerScore.services.KlassService;
+import managerScore.services.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

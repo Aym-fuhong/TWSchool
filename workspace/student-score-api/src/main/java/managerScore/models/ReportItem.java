@@ -1,10 +1,23 @@
 package managerScore.models;
 
 
+import javax.persistence.*;
+
+
 public class ReportItem {
+
+    private String id;
     private Student student;
     private int averageScore;
     private int totalScore;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Student getStudent() {
         return student;

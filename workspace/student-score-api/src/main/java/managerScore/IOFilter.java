@@ -19,13 +19,6 @@ public class IOFilter {
         }
         return isFormated;
     }
-
-    public static Student getStudentInfo(String input) {
-        String[] infoList = input.trim().split("，");
-        return new Student(infoList[0], infoList[1], infoList[2].split("：")[1],
-                infoList[3].split("：")[1], infoList[4].split("：")[1], infoList[5].split("：")[1]);
-    }
-
     public static String[] getStudentsId(String input) {
         String[] list = input.trim().split("，");
         return list;

@@ -1,10 +1,9 @@
 package managerScore.servicesImpl;
 
 import managerScore.IOFilter;
-import managerScore.services.KlassService;
 import managerScore.models.Klass;
 import managerScore.models.Student;
-import org.springframework.beans.factory.annotation.Autowired;
+import managerScore.services.KlassService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
