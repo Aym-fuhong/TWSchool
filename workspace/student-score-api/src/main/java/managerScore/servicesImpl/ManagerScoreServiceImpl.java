@@ -22,11 +22,7 @@ public class ManagerScoreServiceImpl implements managerScore.services.ManagerSco
 
     @Override
     public Report getAllReport() {
-        ArrayList<ReportItem> reportItemArrayList = reportService.getReportItem(klassService.createKlass());
-        float averageOfClass = reportService.getAverageOfClass(klassService.createKlass());
-        float medianOfClass = reportService.getMedianOfClass(klassService.createKlass());
-        Report report = new Report(reportItemArrayList, averageOfClass, medianOfClass);
-        return report;
+        return reportService.getAllReport(klassService.createKlass());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package managerScore.services;
 import managerScore.models.Klass;
+import managerScore.models.Report;
 import managerScore.models.ReportItem;
 import managerScore.models.Student;
 
@@ -13,4 +14,5 @@ public interface ReportService {
     int getStudentTotalScore(Student student);
     int getStudentAverageScore(Student student);
     ArrayList<ReportItem> getReportItem(Klass klass);
+    Report getAllReport(Klass klass);
 }

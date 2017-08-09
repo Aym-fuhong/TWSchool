@@ -1,6 +1,7 @@
 package managerScore.servicesImpl;
 
 import managerScore.models.Klass;
+import managerScore.models.Report;
 import managerScore.models.ReportItem;
 import managerScore.models.Student;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReportServiceImpl implements managerScore.services.ReportService {
+
+    public Report getAllReport(Klass klass) {
+        ArrayList<ReportItem> reportItemArrayList = getReportItem(klass);
+        float averageOfClass = getAverageOfClass(klass);
+        float medianOfClass = getMedianOfClass(klass);
+        Report report = new Report(reportItemArrayList, averageOfClass, medianOfClass);
+        return report;
+    }
 
     public ArrayList<ReportItem> getReportItem(Klass klass){
        ArrayList<ReportItem> reportItemArrayList = new ArrayList<>();
