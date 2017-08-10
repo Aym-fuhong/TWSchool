@@ -2,10 +2,6 @@ $(function () {
     $("#form").validate({
         rules: {
             name: "required",
-            math: "required",
-            language: "required",
-            english: "required",
-            program: "required",
             phone: "required",
             native_place: "required",
             email: {
@@ -20,18 +16,6 @@ $(function () {
         },
         messages: {
             name: "请输入姓名",
-            math: {
-                required: "数学成绩不能为空",
-            },
-            language: {
-                required: "语文成绩不能为空",
-            },
-            english: {
-                required: "英语成绩不能为空",
-            },
-            program: {
-                required: "编程成绩不能为空",
-            },
             phone: "手机号不能为空",
             native_place: "籍贯不能为空",
             email: {
