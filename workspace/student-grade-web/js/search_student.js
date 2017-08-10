@@ -7,18 +7,17 @@ function search() {
         contentType: "application/json;charset=utf-8",
         success: function (data) {
             $("#tbody").remove();
-            data.map(item => {
+
                 let tr = "<tr>";
-                tr += "<td id='studentId'>" + item.id + "</td>";
-                tr += "<td>" + item.name + "</td>";
-                tr += "<td>" + item.email + "</td>";
-                tr += "<td>" + item.id_Card + "</td>";
-                tr += "<td>" + item.phone + "</td>";
-                tr += "<td>" + item.native_place + "</td>";
+                tr += "<td id='studentId'>" + data.id + "</td>";
+                tr += "<td>" + data.name + "</td>";
+                tr += "<td>" + data.email + "</td>";
+                tr += "<td>" + data.id_Card + "</td>";
+                tr += "<td>" + data.phone + "</td>";
+                tr += "<td>" + data.native_place + "</td>";
                 tr += "<td>" + '<a><input id="addGrade" class="btn btn-primary" value="添加成績"></a>' + "</td>";
                 tr += "</tr>";
                 $("#table").append(tr);
-            })
         }
     });
 }
