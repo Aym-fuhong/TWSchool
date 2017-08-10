@@ -32,6 +32,5 @@ public class ClassController {
     public ResponseEntity<ArrayList<Student>> getStudentById(@PathVariable String id) {
         ArrayList<Student> studentArrayList = managerScoreService.getStudentById(id);
         return new ResponseEntity<>(studentArrayList, HttpStatus.OK);
-
     }
 }
