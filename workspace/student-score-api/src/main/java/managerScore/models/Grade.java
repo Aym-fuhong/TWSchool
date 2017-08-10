@@ -1,12 +1,15 @@
 package managerScore.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "grades")
+@Table(name = "grade")
 public class Grade {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
     private String studentId;
     private String math;

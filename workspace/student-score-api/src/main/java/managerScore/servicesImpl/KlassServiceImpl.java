@@ -3,7 +3,9 @@ package managerScore.servicesImpl;
 import managerScore.IOFilter;
 import managerScore.models.Klass;
 import managerScore.models.Student;
+import managerScore.repository.StudentRepository;
 import managerScore.services.KlassService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,11 +13,27 @@ import java.util.List;
 
 @Service
 public class KlassServiceImpl implements KlassService {
+    @Autowired
+    private StudentRepository studentRepository;
     Klass klass = new Klass();
 
     @Override
     public Klass createKlass() {
         return klass;
+    }
+
+    @Override
+    public List<Student> findAllStudent() {
+        List studentArrayList = studentRepository.findAll();
+        return studentArrayList;
+    }
+
+    public void saveStudent(Student student){
+        try {
+            studentRepository.save(student);
+        } catch (Exception e){
+           e.printStackTrace();
+        }
     }
 
     public List<Student> addStudentInfo(Student student) {
