@@ -1,11 +1,30 @@
-
 $(function () {
-    $.urlParam = function(name){
+    $.urlParam = function (name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
     let studentId = $.urlParam('studentId');
     alert(studentId);
+    if(studentId){
+        $.ajax({
+            type: 'GET',
+            url: "http://localhost:8080/students/" + studentId + "/grades",
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                console.log(data);
+                if (data != null) {
+                    $("#math").val(data.math);
+                    $("#language").val(data.math);
+                    $("#english").val(data.math);
+                    $("#program").val(data.math);
+                }
+            }
+        });
+    } else {
+        alert("请选择一个学生");
+    }
+
     $("#form").validate({
         rules: {
             id: "required",
