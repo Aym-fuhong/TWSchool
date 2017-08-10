@@ -66,7 +66,6 @@ public class Grade {
     }
 
     public Grade() {
-
     }
 
     public Grade(String studentId, String math, String language, String english, String program) {

@@ -1,8 +1,10 @@
 package managerScore.servicesImpl;
 
 import managerScore.IOFilter;
+import managerScore.models.Grade;
 import managerScore.models.Klass;
 import managerScore.models.Student;
+import managerScore.repository.GradeRepository;
 import managerScore.repository.StudentRepository;
 import managerScore.services.KlassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Service
 public class KlassServiceImpl implements KlassService {
+    @Autowired
+    private GradeRepository gradeRepository;
     @Autowired
     private StudentRepository studentRepository;
     Klass klass = new Klass();
@@ -34,11 +38,41 @@ public class KlassServiceImpl implements KlassService {
         return student;
     }
 
-    public void saveStudent(Student student){
+    @Override
+    public void saveStudentGrade(Grade grade) {
+        gradeRepository.save(grade);
+    }
+
+    @Override
+    public Grade getGradeByStudentId(String studentId) {
+        return gradeRepository.findByStudentId(studentId);
+
+    }
+
+    @Override
+    public List<Grade> getGrades() {
+        List<Grade> gradeList = gradeRepository.findAll();
+        return gradeList;
+    }
+
+    @Override
+    public void updateGradeByStudentId(String studentId, Grade newGrade) {
+        System.out.println("+++=+++++++++");
+        deleteGradeByStudentId(studentId);
+        saveStudentGrade(newGrade);
+    }
+
+    @Override
+    public void deleteGradeByStudentId(String studentId) {
+        gradeRepository.delete(studentId);
+    }
+
+
+    public void saveStudent(Student student) {
         try {
             studentRepository.save(student);
-        } catch (Exception e){
-           e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
