@@ -28,6 +28,12 @@ public class KlassServiceImpl implements KlassService {
         return studentArrayList;
     }
 
+    @Override
+    public Student getStudentById(String id) {
+        Student student = studentRepository.findById(id);
+        return student;
+    }
+
     public void saveStudent(Student student){
         try {
             studentRepository.save(student);

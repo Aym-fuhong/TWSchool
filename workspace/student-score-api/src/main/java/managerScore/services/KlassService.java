@@ -15,4 +15,5 @@ public interface KlassService {
     ArrayList<Student> getAllStudentList();
     Klass createKlass();
     List<Student> findAllStudent();
+    Student getStudentById(String id);
 }

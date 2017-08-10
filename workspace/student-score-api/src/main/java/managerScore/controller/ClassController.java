@@ -14,19 +14,18 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 public class ClassController {
-    @Autowired
-    private ManagerScoreService managerScoreService;
+
     @Autowired
     private KlassService klassService;
 
-//    @RequestMapping(value = "/students", method = RequestMethod.POST)
+    //    @RequestMapping(value = "/students", method = RequestMethod.POST)
 //    public ResponseEntity<List> addStudent(@RequestBody Student student) {
 //        List<Student> studentList = managerScoreService.addStudent(student);
 //        return new ResponseEntity<>(studentList, HttpStatus.CREATED);
 //    }
     @RequestMapping(value = "/students", method = RequestMethod.POST)
     public HttpStatus saveStudent(@RequestBody Student student) {
-          klassService.saveStudent(student);
+        klassService.saveStudent(student);
         return HttpStatus.CREATED;
     }
 
@@ -35,6 +34,12 @@ public class ClassController {
         List<Student> studentArrayList = klassService.findAllStudent();
         return new ResponseEntity<>(studentArrayList, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Student> getStudentById(@PathVariable String id) {
+        Student student = klassService.getStudentById(id);
+        return new ResponseEntity<>(student, HttpStatus.OK);
+    }
 //
 //    @RequestMapping(value = "/students", method = RequestMethod.GET)
 //    public ResponseEntity<ArrayList<Student>> getAllStudent() {
@@ -42,9 +47,9 @@ public class ClassController {
 //        return new ResponseEntity<>(studentArrayList, HttpStatus.OK);
 //    }
 
-    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
-    public ResponseEntity<ArrayList<Student>> getStudentById(@PathVariable String id) {
-        ArrayList<Student> studentArrayList = managerScoreService.getStudentById(id);
-        return new ResponseEntity<>(studentArrayList, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
+//    public ResponseEntity<ArrayList<Student>> getStudentById(@PathVariable String id) {
+//        ArrayList<Student> studentArrayList = managerScoreService.getStudentById(id);
+//        return new ResponseEntity<>(studentArrayList, HttpStatus.OK);
+//    }
 }
