@@ -41,15 +41,8 @@ public class ClassController {
         if (student == null) {
             return HttpStatus.NOT_FOUND;
         } else {
-            Grade existGrade = klassService.getGradeByStudentId(studentId);
-            Grade newGrade = new Grade(studentId, grade.getMath(), grade.getLanguage(),
-                    grade.getEnglish(), grade.getProgram());
-            if (existGrade == null) {
-                klassService.saveStudentGrade(newGrade);
-            } else {
-                System.out.println("int ohere==========");
-                klassService.updateGradeByStudentId(studentId, newGrade);
-            }
+            grade.setId(studentId);
+            klassService.saveStudentGrade(grade);
             return HttpStatus.OK;
         }
     }
